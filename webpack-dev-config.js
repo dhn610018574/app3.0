@@ -7,9 +7,7 @@ const BUILD_PATH = path.resolve(ROOT_PATH, 'dist/index.js')
 
 module.exports = {
   devtool: 'eval-source-map', //生成Source Maps,这里选择eval-source-map 打包后输出的JS文件的执行具有性能和安全的隐患,生产使用source-map
-  entry: {
-    index: DEV_PATH
-  },
+  entry:['babel-polyfill','./src/index.js'],
   output: {
     path: path.resolve(ROOT_PATH, 'dist'),
     filename: '[name].js'
