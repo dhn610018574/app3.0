@@ -1,8 +1,9 @@
-var path = require('path')
-var webpack = require('webpack');
-var ROOT_PATH = path.resolve(__dirname)
-var DEV_PATH = path.resolve(ROOT_PATH, 'src/index.js')
-var BUILD_PATH = path.resolve(ROOT_PATH, 'dist/index.js')
+const path = require('path')
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ROOT_PATH = path.resolve(__dirname)
+const DEV_PATH = path.resolve(ROOT_PATH, 'src/index.js')
+const BUILD_PATH = path.resolve(ROOT_PATH, 'dist/index.js')
 
 module.exports = {
   devtool: 'eval-source-map', //生成Source Maps,这里选择eval-source-map 打包后输出的JS文件的执行具有性能和安全的隐患,生产使用source-map
@@ -15,7 +16,7 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.jsx?$/,
+      test: /\.(js|jsx)?$/,
       exclude: /node_modules/,
       use: [{
         loader: "babel-loader"
@@ -36,6 +37,9 @@ module.exports = {
     // process: true, //显示合并代码进度
   },
   plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    }),
     new webpack.HotModuleReplacementPlugin() //热模块替换插件
   ]
 }
