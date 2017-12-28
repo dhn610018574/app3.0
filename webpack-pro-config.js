@@ -1,7 +1,7 @@
-const merge = require('webpack-merge');
-const base = require('./webpack-base-config');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
-
+const merge = require('webpack-merge')
+const base = require('./webpack-base-config')
+const UglifyJSPlugin = require('uglifyjs-webpack-plugin')
+const CleanWebpackPlugin = require('clean-webpack-plugin')
 const config = merge(
   base, {
     devtool: false, //生成Source Maps,这里选择eval-source-map 打包后输出的JS文件的执行具有性能和安全的隐患,生产使用source-map
@@ -39,6 +39,7 @@ const config = merge(
       ]
     },
     plugins: [
+      new CleanWebpackPlugin(['./dist']),
       new UglifyJSPlugin()
     ]
   }
