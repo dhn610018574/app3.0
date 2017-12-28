@@ -16,13 +16,30 @@ module.exports = {
   },
   module: {
     rules: [{
-      test: /\.(js|jsx)?$/,
-      exclude: /node_modules/,
-      use: [{
-        loader: "babel-loader"
-      }]
+        test: /\.(js|jsx)?$/,
+        exclude: /node_modules/,
+        use: [{
+          loader: "babel-loader"
+        }]
 
-    }]
+      },
+      {
+        test: /\.(sass|scss|css)/,
+        use: [
+          "style-loader",
+          "css-loader",
+          "resolve-url-loader",
+          "sass-loader?sourceMap"
+        ]
+      },
+      {
+        test: /\.(js|jsx)/,
+        use: [
+          'babel-loader',
+          'eslint-loader'
+        ]
+      }
+    ]
   },
   //webpack-dev-server配置
   devServer: {
