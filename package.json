@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config webpack-dev-config.js",
-    "dev": "webpack-dev-server --config webpack-dev-config.js"
+    "dev": "webpack-dev-server --config webpack-dev-config.js --open --colors --progress --inline",
+    "pro":"webpack --colors --progress --config webpack-pro-config.js"
   },
   "author": "",
   "license": "ISC",
@@ -32,6 +33,7 @@
     "resolve-url-loader": "^2.2.1",
     "sass-loader": "^6.0.6",
     "style-loader": "^0.19.1",
+    "uglifyjs-webpack-plugin": "^1.1.5",
     "url-loader": "^0.6.2",
     "webpack": "^3.10.0",
     "webpack-dev-server": "^2.9.7",

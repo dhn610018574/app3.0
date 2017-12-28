@@ -1,4 +1,3 @@
-const path = require('path')
 const webpack = require('webpack');
 const merge = require('webpack-merge');
 const base = require('./webpack-base-config');
@@ -29,6 +28,12 @@ const config = merge(
           use: [
             'babel-loader',
             'eslint-loader'
+          ]
+        },
+        {
+          test: /\.(png|jpg|svg|gif)/,
+          use: [
+            "url-loader"
           ]
         }
       ]
