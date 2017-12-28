@@ -8,7 +8,7 @@ const config = {
   entry:['babel-polyfill','./src/index.js'],
   output: {
     path: path.resolve(ROOT_PATH, 'dist'),
-    filename: '[name].js'
+    filename: 'index.js'
   },
   plugins: [
     new HtmlWebpackPlugin({
