@@ -3,16 +3,6 @@ import {Router,Route,IndexRoute, Link} from 'react-router'
 import {
   App
 }  from './components'
-// export default class Routers extends Component {
-//   render () {
-//     return (
-//       <Router history={browserHistory} >
-//         <Route path='/' component={App}></Route>
-
-//       </Router>
-//     )
-//   }
-// }
 
 export default (
   <Router path='/' component={App}>

@@ -15,7 +15,7 @@ const config = merge(
 
         },
         {
-          test: /\.(sass|scss|css)/,
+          test: /\.(sass|scss|css)?$/,
           use: [
             "style-loader",
             "css-loader",
@@ -24,16 +24,16 @@ const config = merge(
           ]
         },
         {
-          test: /\.(js|jsx)/,
+          test: /\.(js|jsx)?$/,
           use: [
             'babel-loader',
             'eslint-loader'
           ]
         },
         {
-          test: /\.(png|jpg|svg|gif)/,
+          test: /\.(png|jpg|svg|gif)?$/,
           use: [
-            "url-loader"
+            "url-loader?limit=15000&name=images/[hash:8].[name].[ext]"
           ]
         }
       ]

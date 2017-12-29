@@ -3,7 +3,9 @@ import '../../styles/app.scss'
 export default class App extends Component {
   render() {
     return(
-      <div>hello world!</div>
+      <div className='bg'>
+        hello world!
+      </div>
     )
   }
 }

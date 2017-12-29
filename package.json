@@ -6,6 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack --config webpack-dev-config.js",
+    "clean": "rimraf dist",
     "dev": "webpack-dev-server --config webpack-dev-config.js --open --colors --progress --inline",
     "pro": "webpack --colors --progress --config webpack-pro-config.js"
   },
