@@ -5,7 +5,7 @@ const DEV_PATH = path.resolve(ROOT_PATH, 'src/index.js')
 const BUILD_PATH = path.resolve(ROOT_PATH, 'dist/index.js')
 
 const config = {
-  entry:['babel-polyfill','./src/index.js'],
+  entry:['./src/index.js'],
   output: {
     path: path.resolve(ROOT_PATH, 'dist'),
     filename: 'index.js'
