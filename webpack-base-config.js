@@ -5,10 +5,17 @@ const DEV_PATH = path.resolve(ROOT_PATH, 'src/index.js')
 const BUILD_PATH = path.resolve(ROOT_PATH, 'dist/index.js')
 
 const config = {
-  entry:['./src/index.js'],
+  entry:{
+    app:"./src/index.js",
+    vendors:[
+      "react",
+      "react-dom",
+      "react-router"
+    ]
+  },
   output: {
     path: path.resolve(ROOT_PATH, 'dist'),
-    filename: 'index.js'
+    filename: '[name].js'
   },
   plugins: [
     new HtmlWebpackPlugin({

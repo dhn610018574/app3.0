@@ -24,13 +24,6 @@ const config = merge(
           ]
         },
         {
-          test: /\.(js|jsx)?$/,
-          use: [
-            'babel-loader',
-            'eslint-loader'
-          ]
-        },
-        {
           test: /\.(png|jpg|svg|gif)?$/,
           use: [
             "url-loader?limit=15000&name=images/[hash:8].[name].[ext]"
