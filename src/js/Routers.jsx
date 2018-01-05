@@ -1,13 +1,11 @@
 import React ,{Component} from 'react'
 import {Router,Route,IndexRoute, Link} from 'react-router'
 import {
-  Home
+  NavBar
 }  from './containers'
 
 export default (
   <Router path='/'>
-    <IndexRoute component={Home}></IndexRoute>
-    
-
+    <IndexRoute component={NavBar}></IndexRoute>
   </Router>
 )

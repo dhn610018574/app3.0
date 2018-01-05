@@ -4786,7 +4786,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@15.x, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8:
+prop-types@15.x, prop-types@^15.5.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.6, prop-types@^15.5.8:
   version "15.6.0"
   resolved "http://registry.npm.taobao.org/prop-types/download/prop-types-15.6.0.tgz#ceaf083022fc46b4a35f69e13ef75aed0d639856"
   dependencies:
@@ -5091,6 +5091,13 @@ react-router@3.0.0:
     invariant "^2.2.1"
     loose-envify "^1.2.0"
     warning "^3.0.0"
+
+react-tabs@^2.1.1:
+  version "2.1.1"
+  resolved "http://registry.npm.taobao.org/react-tabs/download/react-tabs-2.1.1.tgz#fd806fe78a990b59f1daf02609aded546fe7016c"
+  dependencies:
+    classnames "^2.2.0"
+    prop-types "^15.5.0"
 
 react-timer-mixin@^0.13.3:
   version "0.13.3"

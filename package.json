@@ -48,6 +48,7 @@
     "antd-mobile": "^2.1.2",
     "react": "15.4.0",
     "react-dom": "15.4.0",
-    "react-router": "3.0.0"
+    "react-router": "3.0.0",
+    "react-tabs": "^2.1.1"
   }
 }
