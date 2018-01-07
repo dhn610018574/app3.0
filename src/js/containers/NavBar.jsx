@@ -2,6 +2,7 @@ import React, {Component} from 'react'
 import { Link } from 'react-router'
 import Home from './Home.jsx'
 import Find from './Find.jsx'
+import InvestDetail from './InvestDetail.jsx'
 class TabController extends Component {
     constructor(props) {
         super(props);
@@ -63,7 +64,7 @@ class TabComponent extends Component {
                         <Home></Home>
                     </div>
                     <div name='投资'>
-                        Invest
+                        <InvestDetail></InvestDetail>
                     </div>
                     <div name='发现'>
                         <Find></Find>
