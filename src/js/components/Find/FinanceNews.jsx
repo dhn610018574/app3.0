@@ -6,7 +6,7 @@ export default class FinanceNews extends Component {
     return(
       <div className='financeNews'>
         <div className='newsTitle'>
-          <img src="" alt=""/>
+          <span></span>
           <p>信而富动态</p>
           <Link to='javascript:;'>更多</Link>
         </div>

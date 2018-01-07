@@ -12,7 +12,6 @@ export default class NewsList extends Component {
               <p>2017-07-15</p>
             </div>
             <div className='newsImg'>
-              <img src="" alt=""/>
             </div>
           </li>
           <li>
@@ -21,7 +20,6 @@ export default class NewsList extends Component {
               <p>2017-07-15</p>
             </div>
             <div className='newsImg'>
-              <img src="" alt=""/>
             </div>
           </li>
           <li>
@@ -30,7 +28,6 @@ export default class NewsList extends Component {
               <p>2017-07-15</p>
             </div>
             <div className='newsImg'>
-              <img src="" alt=""/>
             </div>
           </li>
         </ul>

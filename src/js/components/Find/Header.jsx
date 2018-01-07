@@ -7,7 +7,7 @@ export default class Header extends Component {
       <div className='findHeader'>
         <div className='header'>   
           <p>发现</p>
-          <img src="" alt=""/>
+          <div></div>
         </div>
       </div>
     )
