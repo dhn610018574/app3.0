@@ -2,6 +2,8 @@ import React ,{Component} from 'react'
 import { Link } from 'react-router'
 import {
   InvestHeader,
+  InvestPanel,
+  NcpProduct,
   InvestBar
 } from '../components'
 export default class Find extends Component {
@@ -9,6 +11,8 @@ export default class Find extends Component {
     return(
       <div>
         <InvestHeader/>
+        <InvestPanel/>
+        <NcpProduct/>
         <InvestBar/>
       </div>
     )

@@ -1,6 +1,7 @@
 import React ,{Component} from 'react'
 import {Link} from 'react-router'
-import { Carousel } from 'antd-mobile';
+import { Carousel } from 'antd-mobile'
+import './index.scss'
 let response = require('../../../../mock/home.json')
 let news = require('../../../../mock/news.json')
 export default class Banner extends Component {

@@ -10,6 +10,8 @@ export {default as HomeBar} from './Home/HomeBar.jsx'
 // 投资页
 export {default as InvestBar} from './Invest/InvestBar.jsx'
 export {default as InvestHeader} from './Invest/InvestHeader.jsx'
+export {default as InvestPanel} from './Invest/InvestPanel.jsx'
+export {default as NcpProduct} from './Invest/NcpProduct.jsx'
 
 // 发现
 export {default as FindBanner} from './Find/FindBanner.jsx'
@@ -19,6 +21,10 @@ export {default as NewList} from './Find/NewList.jsx'
 export {default as FindBar} from './Find/FindBar.jsx'
 //我的页面
 export {default as MyBar} from './My/MyBar.jsx'
+export {default as MyHeader} from './My/MyHeader.jsx'
+export {default as RechargeCashIn} from './My/RechargeCashIn.jsx'
+export {default as Panel} from './My/Panel.jsx'
+export {default as AppPanel} from './My/AppPanel.jsx'
 
 
 //投资详情页

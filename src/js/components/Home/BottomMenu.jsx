@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router'
+import './index.scss'
 export default class NewProduct extends Component {
   render(){
     return(
