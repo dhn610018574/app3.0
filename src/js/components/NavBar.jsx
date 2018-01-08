@@ -1,8 +1,5 @@
 import React, {Component} from 'react'
 import { Link } from 'react-router'
-import Home from './Home.jsx'
-import Find from './Find.jsx'
-import InvestDetail from './InvestDetail.jsx'
 class TabController extends Component {
     constructor(props) {
         super(props);
@@ -25,12 +22,13 @@ class TabController extends Component {
                     {
                         React.Children.map(that.props.children,(element,index)=>{
                             return (
-                                <div 
+                                <Link 
+                                to={element.props.path}
                                 onClick={()=>{that.setState({currentIndex:index})}}
                                 className={that.check_title_index(index)}
                                 >
                                 {element.props.name}
-                                </div>
+                                </Link>
                             )
                         })
                     }
@@ -60,17 +58,17 @@ class TabComponent extends Component {
         return (
             <div>
                 <TabController>
-                    <div name='首页'>
+                    <div name='首页' path='home'>
                         <Home></Home>
                     </div>
-                    <div name='投资'>
-                        <InvestDetail></InvestDetail>
+                    <div name='投资' path='invest'>
+                        <Invest></Invest>
                     </div>
-                    <div name='发现'>
+                    <div name='发现' path='find'>
                         <Find></Find>
                     </div>
-                    <div name='我的'>
-                        My
+                    <div name='我的' path='my'>
+                        <My></My>
                     </div>
                 </TabController>
             

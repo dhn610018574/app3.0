@@ -5,7 +5,7 @@ export default class Safe extends Component {
     return(
       <div className="safe">
         <a href="javascript:;">
-          <div className='title'>
+          <div className='safe_title'>
             <span>安全等级参考</span>
             <img src="../../images/star.png" alt=""/>
             <img src="../../images/star.png" alt=""/>
@@ -16,7 +16,7 @@ export default class Safe extends Component {
           <p>本金、收益可能会有一定幅度的波动</p>
         </a>
         <a href="javascript:;">
-          <div className='title'>
+          <div className='safe_title'>
             <span>投资人资格</span>
             <img src="../../images/more.png" alt="" className='more' />
           </div>

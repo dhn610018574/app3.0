@@ -5,6 +5,7 @@ import {
   FindBanner,
   FinanceNews,
   NewList,
+  FindBar
 } from '../components'
 export default class Find extends Component {
   render() {
@@ -14,6 +15,7 @@ export default class Find extends Component {
         <FindBanner/>
         <FinanceNews/>
         <NewList/>
+        <FindBar/>
       </div>
     )
   }

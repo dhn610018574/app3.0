@@ -7,7 +7,8 @@ import {
   NewProduct,
   OldProduct,
   BottomMenu,
-  Bottom
+  Bottom,
+  HomeBar
 } from '../components'
 export default class Home extends Component {
   render() {
@@ -20,6 +21,7 @@ export default class Home extends Component {
         <OldProduct/>
         <BottomMenu/>
         <Bottom/>
+        <HomeBar/>
       </div>
     )
   }

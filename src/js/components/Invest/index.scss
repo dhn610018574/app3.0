@@ -1,0 +1,33 @@
+//header
+.findHeader {
+  height: .88rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+}
+
+.header {
+  width: 100%;
+  height: .88rem;
+  background-color: #fff;
+  position: absolute;
+  top: 0;
+  P {
+    line-height: .88rem;
+    text-align: center;
+    font-size: .34rem;
+    color: #333;
+  }
+  div {
+    position: absolute;
+    top: 0;
+    right: .28rem;
+    margin-top: .28rem;
+    width: .4rem;
+    height: .4rem;
+    background: url('../../../images/ic_discovery_customer_service.png') no-repeat;
+    background-size: 100%;
+  }
+}
