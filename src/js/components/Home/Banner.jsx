@@ -39,6 +39,7 @@ export default class Banner extends Component {
     return (
       <div>
         <Carousel
+          dots={false}
           autoplay={true}
           infinite
           selectedIndex={1}
