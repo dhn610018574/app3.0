@@ -21,11 +21,28 @@ class TabController extends Component {
             currentIndex : 0
         }
     }
+
     check_title_index(index) {
         return index === this.state.currentIndex ? 'active':'' 
     }
-    check_items_index(index) {
-        return index === this.state.currentIndex ? 'show' : 'none'
+
+    handleScroll(index) {
+      let top = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
+      switch(index){
+        case 0:
+        top = 0
+        break;
+        case 1:
+        top = 782
+        break;
+        case 2:
+        top = 2514
+        break;
+        case 3:
+        top = 4397
+        break;
+      }
+      scrollTo(0,top)
     }
     render() {
         const that = this;
@@ -37,8 +54,8 @@ class TabController extends Component {
                         React.Children.map(that.props.children,(element,index)=>{
                             return (
                                 <li 
-                                to={element.props.path}
-                                onClick={()=>{that.setState({currentIndex:index})}}
+                                href='javascript:;'
+                                onClick={()=>{that.setState({currentIndex:index});that.handleScroll(index)}}
                                 className={that.check_title_index(index)}
                                 >
                                 {element.props.name}
@@ -52,15 +69,13 @@ class TabController extends Component {
                 {
                     React.Children.map(that.props.children,(element,index)=>{
                         return (
-                            <div className={that.check_items_index(index)}>
+                            <div className='show'>
                             {element}
                             </div>
                         )
                     })
                 }                
                 </div>
-                
-
             </div>
         )
     }
@@ -82,7 +97,7 @@ class TabComponent extends Component {
                   <Team/>
               </div>
               <div name='合作伙伴'>
-                  4
+                  <Bank/>
               </div>
           </TabController>
         )
@@ -92,7 +107,7 @@ class TabComponent extends Component {
 class CompanyProfile extends Component {
   render() {
     return (
-      <div className='company'>
+      <div className='company' ref='company'>
         <h3>公司简介</h3>
         <div className='line'></div>
         <div className='market_poster'></div>
@@ -109,7 +124,7 @@ class CompanyProfile extends Component {
 class CompanyHonor extends Component {
   render() {
     return (
-      <div className='honor'>
+      <div className='honor' id='honor'>
         <h3>企业荣誉</h3>
         <div className="line"></div>
         <div className='left'>
@@ -176,7 +191,7 @@ class CompanyHonor extends Component {
 class Team extends Component {
   render() {
     return (
-      <div className='team'>
+      <div className='team' id='team'>
         <h3>精英团队</h3>
         <div className="line"></div>
         <h4>CEO简介</h4>
@@ -187,7 +202,7 @@ class Team extends Component {
         <div className='team_icon1'></div>
         <p className='introduction_text'>世界知名网贷鼻祖、资深行业领袖及金融巨头担任信而富董事和顾问，提供战略支持。</p>
         <div className='partner_introduction'>
-          <div>
+          <div className='partner1'>
             <div className='person_introl'>
               <span className='name'>Phillip Riese</span>
               <span className='pic'></span>            
@@ -196,29 +211,72 @@ class Team extends Component {
             <p>曾任美国运通(American Express)信用卡服务业务总裁</p>
             <p>现为信而富顾问</p>
           </div>
-          <div></div>
-          <div>
+          <div className='partner2'>
             <div className='person_introl'>
-              <span className='name'>Phillip Riese</span>
               <span className='pic'></span>            
+              <span className='name'>Nigel Morris</span>
             </div>
-            <p>全球首家网络信贷平台、英国Zopa董事会董事</p>
-            <p>曾任美国运通(American Express)信用卡服务业务总裁</p>
+            <p>美国首家网贷平台Prosper公司董事</p>
+            <p>曾任美国第一资本（Capital One）创始人、总裁</p>
+            <p>1999年被伦敦商学院授予“年度最佳企业家”称号</p>
             <p>现为信而富顾问</p>
           </div>
-          <div></div>
-          <div>
+          <div className='partner3'>
             <div className='person_introl'>
-              <span className='name'>Phillip Riese</span>
+              <span className='name'>Frank Rotman</span>
               <span className='pic'></span>            
             </div>
-            <p>全球首家网络信贷平台、英国Zopa董事会董事</p>
-            <p>曾任美国运通(American Express)信用卡服务业务总裁</p>
+            <p>美国QED Investors创始人之一</p>
+            <p>曾任美国Capital One分析师</p>
             <p>现为信而富顾问</p>
           </div>
-
-        
+          <div className='partner4'>
+            <div className='person_introl'>
+              <span className='pic'></span>            
+              <span className='name'>Douglas L. Brown</span>
+            </div>
+            <p>DLB Capital创始人、董事会主席及首席执行官</p>
+            <p>中国平安保险公司和中国建设银行上市顾问</p>
+            <p>曾任摩根士丹利（Morgan Stanley）投资银行董事会副主席</p>
+            <p>现为信而富顾问</p>
+          </div>
+          <div className='partner5'>
+            <div className='person_introl'>
+              <span className='name'>张化桥</span>
+              <span className='pic'></span>            
+            </div>
+            <p>曾就职于中国人民银行、深圳控股公司、瑞银集团</p>
+            <p>现为港交所上市公司中国支付通集团董事长</p>
+            <p>现为信而富顾问</p>
+          </div>
         </div>
+      </div>
+    )
+  }
+}
+class Bank extends Component {
+  render() {
+    return (
+      <div className='bank' id='bank'>
+        <h3>合作伙伴</h3>
+        <div className='line'></div>
+        <p className='bank_text'>信而富已先后为一半以上的全国性银行及众多金融、科技机构提供各类风险管理服务。</p>
+        <ul className='bank_logo'>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+          <li></li>
+        </ul>
       </div>
     )
   }
