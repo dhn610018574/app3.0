@@ -45,7 +45,7 @@ class TabController extends Component {
         console.log(top)
         break;
       }
-      scrollTo(0,top)
+      scrollTo({'behavior': 'smooth',top:top})
     }
     render() {
         const that = this;
@@ -111,7 +111,7 @@ class Strength extends Component {
   render() {
     return (
       <div className='strength' ref='strength'>
-        <h3>小额分散</h3>
+        <h3>综合实力</h3>
         <div className='line'></div>
         <div className='strength1'>
           <div className='icon1'></div>
@@ -149,7 +149,7 @@ class Compliance extends Component {
   render() {
     return (
       <div className='compliance' ref='compliance'>
-        <h3>风控体系</h3>
+        <h3>专业合规</h3>
         <div className="line"></div>
         <div className='compliance_bg'></div>
       </div>

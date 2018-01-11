@@ -51,7 +51,7 @@ class TabController extends Component {
         console.log(top)
         break;
       }
-      scrollTo(0,top)
+      scrollTo({'behavior': 'smooth',top:top})
     }
     render() {
         const that = this;
