@@ -5,7 +5,9 @@ import {
   Invest,
   Find,
   My,
-  AboutUs
+  AboutUs,
+  RiskManagement,
+  PlatformAdvantage
 }  from './containers'
 
 export default (
@@ -16,5 +18,7 @@ export default (
     <Route path='/find' component={Find}></Route>
     <Route path='/my' component={My}></Route>
     <Route path='/aboutUs' component={AboutUs}></Route>
+    <Route path='/riskManagement' component={RiskManagement}></Route>
+    <Route path='/platformAdvantage' component={PlatformAdvantage}></Route>
   </Router>
 )

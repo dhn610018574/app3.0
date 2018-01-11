@@ -1,6 +1,11 @@
 import React ,{Component} from 'react'
 import { Link } from 'react-router'
 import './index.scss'
+let companyHeight = 0
+let honorHeight = 0
+let teamHeight = 0
+let bankHeight = 0
+
 export default class AboutUs extends Component {
   render() {
     return(
@@ -31,15 +36,19 @@ class TabController extends Component {
       switch(index){
         case 0:
         top = 0
+        console.log(top)
         break;
         case 1:
-        top = 782
+        top = companyHeight+8
+        console.log(top)
         break;
         case 2:
-        top = 2514
+        top = companyHeight + honorHeight+15
+        console.log(top)
         break;
         case 3:
-        top = 4397
+        top = companyHeight + honorHeight + teamHeight+22
+        console.log(top)
         break;
       }
       scrollTo(0,top)
@@ -81,7 +90,6 @@ class TabController extends Component {
     }
 }
 
-
 class TabComponent extends Component {
     render() {
         return (
@@ -105,6 +113,10 @@ class TabComponent extends Component {
 }
 
 class CompanyProfile extends Component {
+  componentDidMount() {
+    companyHeight = this.refs.company.clientHeight
+    console.log(companyHeight);
+  }
   render() {
     return (
       <div className='company' ref='company'>
@@ -122,9 +134,13 @@ class CompanyProfile extends Component {
   }
 }
 class CompanyHonor extends Component {
+  componentDidMount(){
+    honorHeight = this.refs.honor.clientHeight
+    console.log(honorHeight);
+  }
   render() {
     return (
-      <div className='honor' id='honor'>
+      <div className='honor' ref='honor'>
         <h3>企业荣誉</h3>
         <div className="line"></div>
         <div className='left'>
@@ -189,9 +205,13 @@ class CompanyHonor extends Component {
   }
 }
 class Team extends Component {
+  componentDidMount(){
+    teamHeight = this.refs.team.clientHeight
+    console.log(teamHeight)
+  }
   render() {
     return (
-      <div className='team' id='team'>
+      <div className='team' ref='team'>
         <h3>精英团队</h3>
         <div className="line"></div>
         <h4>CEO简介</h4>
@@ -255,9 +275,13 @@ class Team extends Component {
   }
 }
 class Bank extends Component {
+  componentDidMount() {
+    bankHeight = this.refs.bank.clientHeight
+    console.log(bankHeight)
+  }
   render() {
     return (
-      <div className='bank' id='bank'>
+      <div className='bank' ref='bank'>
         <h3>合作伙伴</h3>
         <div className='line'></div>
         <p className='bank_text'>信而富已先后为一半以上的全国性银行及众多金融、科技机构提供各类风险管理服务。</p>
