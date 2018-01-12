@@ -1,5 +1,5 @@
 import React ,{Component} from 'react'
-import { Link } from 'react-router'
+import { Link ,browserHistory} from 'react-router'
 import './index.scss'
 let MFHeight = 0
 let WCSHeight = 0
@@ -7,11 +7,14 @@ let BDMHeight = 0
 let FAHeight = 0
 
 export default class RiskManagement extends Component {
+  goBack(){
+    browserHistory.push('home')
+  }
   render() {
     return(
       <div>
         <h3 className='aboutTitle'>
-          <span></span>
+          <span onClick={this.goBack.bind(this)}></span>
           风险控制
         </h3>
         <TabComponent></TabComponent>

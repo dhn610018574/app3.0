@@ -3,6 +3,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ROOT_PATH = path.resolve(__dirname)
 const DEV_PATH = path.resolve(ROOT_PATH, 'src/index.js')
 const BUILD_PATH = path.resolve(ROOT_PATH, 'dist/index.js')
+const WebpackMd5Hash = require('webpack-md5-hash');
 
 const config = {
   entry:{
@@ -15,12 +16,13 @@ const config = {
   },
   output: {
     path: path.resolve(ROOT_PATH, 'dist'),
-    filename: '[name].js'
+    filename: '[name].[hash:8].js'
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html'
-    })
+    }),
+    new WebpackMd5Hash()
   ]
 }
 

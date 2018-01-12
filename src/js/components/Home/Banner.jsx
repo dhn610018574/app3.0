@@ -81,48 +81,22 @@ export default class Banner extends Component {
 }
 
 class Top extends Component {
-    state = {
-    data: {
-      "app_pop_up":[],
-      "discover_menu":[],
-      "offline_invest_protocal":[],
-      "app_bankauth_tips":[],
-      "app_top_menu":[],
-      "open_protocol":[],
-      "app_open_page":[],
-      "app_block_menu":[],
-      "app_cgbank_name":[],
-      "app_new_exclusive":[],
-      "app_banner":[],
-      "xjd_invest_protocal":[],
-      "month_tips":[],
-      "ncp_invest_proctoal":[],
-      "register_protocol":[]
-    },
-    newsData:[]
-    // imgHeight: 80,
-  }
-  componentDidMount() {
-    // simulate img loading
-    setTimeout(() => {
-      this.setState({
-        data: response.data,
-        newsData:news
-      });
-    }, 100);
-  }
+
   render() {
     return(
       <div className="top">
-        {this.state.data.app_top_menu.map(index=>(
-          <a
-          key={Math.random()}
-          href={`${index.jumpUrl}`}
-          >
-          <img src={`${index.iconUrl}`} alt=""/>
-          <p>{`${index.name}`}</p>
-          </a>
-        ))}
+        <a href="aboutUs">
+          <img src="" alt="" className='gy'/>
+          <p>关于我们</p>
+        </a>
+        <a href="platformAdvantage">
+          <img src="" alt="" className='pt'/>
+          <p>平台优势</p>
+        </a>
+        <a href="riskManagement">
+          <img src="" alt="" className='fx'/>
+          <p>风险控制</p>
+        </a>
       </div>
     )
   }

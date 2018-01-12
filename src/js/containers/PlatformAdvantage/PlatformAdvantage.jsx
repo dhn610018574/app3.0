@@ -1,15 +1,18 @@
 import React ,{Component} from 'react'
-import { Link } from 'react-router'
+import { Link,browserHistory } from 'react-router'
 import './index.scss'
 let strengthHeight = 0
 let complianceHeight = 0
 
 export default class PlatformAdvantage extends Component {
+  goBack(){
+    browserHistory.push('home')
+  }
   render() {
     return(
       <div>
         <h3 className='aboutTitle'>
-          <span></span>
+          <span onClick={this.goBack.bind(this)}></span>
           平台优势
         </h3>
         <TabComponent></TabComponent>
