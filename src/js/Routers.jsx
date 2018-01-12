@@ -7,7 +7,8 @@ import {
   My,
   AboutUs,
   RiskManagement,
-  PlatformAdvantage
+  PlatformAdvantage,
+  NoviceWelfare
 }  from './containers'
 
 export default (
@@ -20,5 +21,6 @@ export default (
     <Route path='/aboutUs' component={AboutUs}></Route>
     <Route path='/riskManagement' component={RiskManagement}></Route>
     <Route path='/platformAdvantage' component={PlatformAdvantage}></Route>
+    <Route path='/noviceWelfare' component={NoviceWelfare}></Route>
   </Router>
 )

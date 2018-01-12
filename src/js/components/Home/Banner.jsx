@@ -86,15 +86,15 @@ class Top extends Component {
     return(
       <div className="top">
         <a href="aboutUs">
-          <img src="" alt="" className='gy'/>
+          <div className='gy'></div>
           <p>关于我们</p>
         </a>
         <a href="platformAdvantage">
-          <img src="" alt="" className='pt'/>
+          <div className='pt'></div>
           <p>平台优势</p>
         </a>
         <a href="riskManagement">
-          <img src="" alt="" className='fx'/>
+          <div className='fx'></div>
           <p>风险控制</p>
         </a>
       </div>
