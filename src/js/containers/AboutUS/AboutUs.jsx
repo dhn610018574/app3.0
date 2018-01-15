@@ -1,5 +1,6 @@
 import React ,{Component} from 'react'
 import { Link ,browserHistory} from 'react-router'
+import {CommonHeader} from '../../components'
 import './index.scss'
 let companyHeight = 0
 let honorHeight = 0
@@ -7,16 +8,10 @@ let teamHeight = 0
 let bankHeight = 0
 
 export default class AboutUs extends Component {
-  goBack(){
-    browserHistory.push('home')
-  }
   render() {
     return(
       <div>
-        <h3 className='aboutTitle'>
-          <span onClick={this.goBack.bind(this)}></span>
-          关于我们
-        </h3>
+        <CommonHeader title='关于我们'></CommonHeader>
         <TabComponent></TabComponent>
       </div>
     )

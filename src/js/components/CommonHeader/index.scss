@@ -1,0 +1,26 @@
+// title
+.commontitle {
+  color: #333;
+  font-size: .36rem;
+  line-height: .88rem;
+  text-align: center;
+  background-color: #fff;
+  position: relative;
+  position: fixed;
+  height: .88rem;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  z-index: 9999;
+  span {
+    position: absolute;
+    width: .4rem;
+    height: .4rem;
+    background: url('../../../images/goback.png') no-repeat;
+    background-size: 100%;
+    top: 50%;
+    left: .3rem;
+    margin-top: -.2rem;
+  }
+}

@@ -1,27 +1,29 @@
 import React ,{Component} from 'react'
 import { Link } from 'react-router'
 import {
+  CommonHeader,
   IconTitle,
-  IntrolProduct,
+  YearRale,
+  Progress,  
+  User,
   NewPerson,
   PlanProgress,
-  Progress,
   Safe,
-  User,
-  YearRale
+  IntrolProduct
 } from '../components'
 export default class InvestDetail extends Component {
   render() {
     return(
       <div>
-        <IconTitle/>
-        <YearRale/>
-        <Progress/>
-        <User/>        
-        <PlanProgress/>
-        <NewPerson/>        
-        <Safe/>
-        <IntrolProduct/>
+        <CommonHeader title='投资详情页'></CommonHeader>
+        <IconTitle></IconTitle>
+        <YearRale></YearRale>
+        <Progress></Progress>
+        <User></User>
+        <NewPerson></NewPerson>
+        <PlanProgress></PlanProgress>
+        <Safe></Safe>
+        <IntrolProduct></IntrolProduct>
       </div>
     )
   }

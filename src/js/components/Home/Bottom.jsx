@@ -5,7 +5,7 @@ export default class Bottom extends Component {
   render(){
     return(
       <div className='bottomBtn'>
-        <Link to=''>关于信而富</Link>
+        <Link to='aboutUs'>关于信而富</Link>
       </div>       
     )
   }

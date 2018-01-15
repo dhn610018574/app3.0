@@ -3,6 +3,7 @@ import {Router,Route,IndexRoute, Link} from 'react-router'
 import {
   Home,
   Invest,
+  InvestDetail,
   Find,
   My,
   AboutUs,
@@ -16,6 +17,7 @@ export default (
     <IndexRoute component={Home}></IndexRoute>
     <Route path='/home' component={Home}></Route>
     <Route path='/invest' component={Invest}></Route>
+    <Route path='/investDetail' component={InvestDetail}></Route>
     <Route path='/find' component={Find}></Route>
     <Route path='/my' component={My}></Route>
     <Route path='/aboutUs' component={AboutUs}></Route>

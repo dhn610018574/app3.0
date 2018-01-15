@@ -7,7 +7,7 @@ export default class NewFits extends Component {
       <div className='fits'>
         <div className='fitname'>
           <h3>新手福利</h3>
-          <Link to=''></Link>
+          <Link to='NoviceWelfare'></Link>
         </div>
         <div className='steps'></div>
         <a className="register" href=''>立即注册</a>

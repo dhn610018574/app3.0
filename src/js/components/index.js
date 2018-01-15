@@ -1,3 +1,5 @@
+// 公共头部
+export {default as CommonHeader} from './CommonHeader/CommonHeader.jsx'
 // 首页
 export {default as Title} from './Home/Title.jsx'
 export {default as Banner} from './Home/Banner.jsx'

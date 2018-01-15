@@ -3,7 +3,7 @@ import './index.scss'
 export default class YearRale extends Component {
   render(){
     return (
-      <div>
+      <div className='rale_detail'>
         <h6 className='rale'>期望年化收益率</h6>
         <p className='yearRale'>7.00<e>%</e></p>
         <div className='list'>
@@ -18,7 +18,6 @@ export default class YearRale extends Component {
           <p>计划金额</p>
           <p>50万元</p>
         </div>
-
       </div>
     )
   }
