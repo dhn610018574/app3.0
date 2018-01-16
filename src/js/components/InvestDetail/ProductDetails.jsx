@@ -38,7 +38,7 @@ export default class ProductDetails extends Component {
             <div className='finished'></div>
           </div>
         </div>
-        <Link to='' className='investNum'>已有<i>53</i>人投资<span></span></Link>
+        <Link to='investLog' className='investNum'>已有<i>53</i>人投资<span></span></Link>
       </div>
     )
   }

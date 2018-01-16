@@ -5,7 +5,8 @@ import {
   ProductDetails,
   PlanProgress,
   Safety,
-  ProductDescription
+  ProductDescription,
+  InvestPopup,
 } from '../components'
 export default class InvestDetail extends Component {
   render() {
@@ -16,6 +17,7 @@ export default class InvestDetail extends Component {
         <PlanProgress/>
         <Safety/>
         <ProductDescription/>
+        <InvestPopup/>  
       </div>
     )
   }

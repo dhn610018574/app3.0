@@ -5,7 +5,7 @@
   left: 0;
   width: 100%;
   height: .88rem;
-  z-index: 9999;
+  z-index: 9997;
   padding: 0 .3rem;
   background-color: #fff;
   display: flex;
@@ -342,6 +342,11 @@
       font-size: .24rem;
       line-height: .84rem;
       border-bottom: 1px solid rgba(0, 0, 0, .1);
+      >a{
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
       span {
         width: .28rem;
         height: .32rem;
@@ -352,7 +357,7 @@
         background: url('../../../images/investDetail/icon2.png') no-repeat;
         background-size: 100%;
       }
-      a {
+      e {
         height: .22rem;
         width: .12rem;
         position: absolute;

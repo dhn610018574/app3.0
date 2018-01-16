@@ -31,6 +31,7 @@ export {default as AppPanel} from './My/AppPanel.jsx'
 
 //投资详情页
 export {default as InvestDetailTitle} from './InvestDetail/InvestDetailTitle.jsx'
+export {default as InvestPopup} from './InvestPopup/index.jsx'
 export {default as ProductDetails} from './InvestDetail/ProductDetails.jsx'
 export {default as PlanProgress} from './InvestDetail/PlanProgress.jsx'
 export {default as Safety} from './InvestDetail/Safety.jsx'
