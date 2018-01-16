@@ -8,7 +8,7 @@ export default class NewProduct extends Component {
         <h4>新手专享理财产品</h4>
         <ul>
           <li>
-            <Link to="">
+            <Link to="investDetail">
               <div className='product-introl'>
                 <div>
                   <span>高回报</span>

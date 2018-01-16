@@ -1,393 +1,402 @@
-body {
-  background: #F5F5F5;
-  min-height: 100%;
-  padding-bottom: .96rem;
-}
-
-// 头部提示标语
-.tips {
-  margin-top: .88rem;
+//产品详情页头部
+.investDetailTitle {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: .88rem;
+  z-index: 9999;
+  padding: 0 .3rem;
   background-color: #fff;
   display: flex;
   justify-content: space-between;
-  color: #666;
-  height: .6rem;
-  font-size: .24rem;
-  padding: .22rem .3rem;
-  i {
-    border: 1px solid #FE7857;
-    border-radius: .2rem;
-    padding: .02rem .2rem;
-    margin-left: .16rem;
-    color: #FE7857;
+  align-items: center;
+  border-bottom: 1px solid #E2E2E2;
+  .back {
+    width: .4rem;
+    height: .4rem;
+    background: url('../../../images/goback.png') no-repeat;
+    background-size: 100%;
   }
-}
-
-// 年化利率
-.rale_detail{
-  background-color: #fff;
-}
-.rale {
-  margin: .4rem 0;
-  font-size: .24rem;
-  color: #FB4D3A;
-  text-align: center;
-  position: relative;
-  &:before,
-  &:after {
-    content: '';
-    position: absolute;
-    background: linear-gradient(90deg, rgba(238, 238, 238, 0.00) 0%, #FF6A5A 100%);
-    width: 1.1rem;
-    height: 2px;
-  }
-  &:before {
-    left: 22.9%;
-    top: 50%;
-  }
-  &:after {
-    right: 22.9%;
-    top: 50%;
-    background: linear-gradient(90deg, #FF6A5A 0%, rgba(238, 238, 238, 0.00) 100%)
-  }
-}
-
-.yearRale {
-  font-size: .72rem;
-  color: rgba(251, 77, 58, 0.95);
-  line-height: .72rem;
-  text-align: center;
-  e {
-    font-size: .4rem;
-  }
-}
-
-// 产品详情介绍
-.list {
-  margin-top: 0;
-  width: 33.33%;
-  display: inline-block;
-  font-size: .24rem;
-  text-align: center;
-  color: #333;
-  border-right: 1px solid rgba(171, 171, 171, 0.20);
-  &:last-child {
-    border-right: none;
-  }
-  p:nth-of-type(2n+1) {
-    color: #ABABAB;
-  }
-}
-
-// 进度条
-.progress {
-  padding: 0 11.8%;
-  margin-bottom: 2.9%;
-  background-color: #fff;
-  .rest {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: .1rem;
-  }
-  span {
-    font-size: .24rem;
-    color: #ABABAB;
-  }
-  .total {
-    height: .08rem;
-    border-radius: 1.2rem;
-    background-image: linear-gradient(-180deg, #FCB88A 0%, #FF6A5A 100%);
-    .finished {
-      width: 40%;
-      background: #E7E7E7;
-      height: .08rem;
-      border-radius: 1.2rem;
+  .product_title {
+    text-align: center;
+    .pro_name {
+      font-size: .3rem;
+      line-height: .3rem;
+      color: #333;
+      margin-bottom: .06rem;
+    }
+    .prefix {
+      font-size: .2rem;
+      color: #999;
+      line-height: .2rem;
     }
   }
+  .share {
+    width: .4rem;
+    height: .4rem;
+    background: url('../../../images/investDetail/zhuanfa.png') no-repeat;
+    background-size: 100%;
+  }
 }
 
-// 用户
-.userNum {
-  display: block;
-  border-style: none;
-  text-align: center;
-  color: #666 !important;
-  font-size: .22rem;
-  margin-bottom: 2.4%;
+// 产品详情页产品介绍
+.productDetails {
   background-color: #fff;
-  span {
-    display: inline-block;
-    vertical-align: middle;
+  padding: 0 .3rem .52rem;
+  margin-top: .88rem;
+  overflow: hidden;
+  .timeAndTips {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: .2rem;
+    .closeTime {
+      color: #666;
+      font-size: .24rem;
+      line-height: .24rem;
+    }
+    .tips {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      span {
+        height: .36rem;
+        border-radius: 1.12rem;
+        border: 1px solid #FF7A59;
+        font-size: .22rem;
+        color: #FF7A59;
+        text-align: center;
+        line-height: .2rem;
+        margin-left: .16rem;
+        padding: .06rem .12rem;
+      }
+    }
+  }
+  .hopeYearRate {
+    color: #FB4D3A;
+    font-size: .24rem;
+    line-height: .24rem;
+    margin: .4rem 0;
+    text-align: center;
+    .left,
+    .right {
+      display: inline-block;
+      vertical-align: middle;
+      height: .02rem;
+      width: 1.1rem;
+      background-image: linear-gradient(90deg, rgba(238, 238, 238, 0.00) 0%, #FF6A5A 100%);
+    }
+    .left {
+      margin-right: .1rem;
+    }
+    .right {
+      background-image: linear-gradient(-90deg, rgba(238, 238, 238, 0.00) 0%, #FF6A5A 100%);
+      margin-left: .1rem;
+    }
+  }
+  .yearRate {
+    text-align: center;
+    font-size: .72rem;
+    line-height: .72rem;
+    color: #FB4D3A;
+    margin-bottom: .66rem;
+    e {
+      font-size: .4rem;
+      line-height: .4rem;
+      margin-left: .1rem;
+    }
+  }
+  .investLimit {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: .6rem;
+    div {
+      width: 33.3%;
+      height: .58rem;
+      font-size: .24rem;
+      color: #333;
+      line-height: .24rem;
+      text-align: center;
+      border-right: .04rem solid rgba(171, 171, 171, 0.20);
+      &:last-child {
+        border: none;
+      }
+      p:first-child {
+        color: #ABABAB;
+        margin-bottom: .1rem;
+      }
+    }
+  }
+  .progress {
+    padding: 0 .6rem;
+    height: .52rem;
+    margin-bottom: .6rem;
+    .speed {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: .24rem;
+      line-height: .24rem;
+      color: #ABABAB;
+      margin-bottom: .1rem;
+    }
+    .progressBar {
+      height: .08rem;
+      border-radius: 1.2rem;
+      background-image: linear-gradient(-180deg, #FCB88A 0%, #FF6A5A 100%);
+      .finished {
+        height: 100%;
+        width: 65%;
+        background-color: #E7E7E7;
+        border-radius: 1.2rem;
+      }
+    }
+  }
+  .investNum {
+    display: block;
+    font-size: .22rem;
+    color: #666;
+    text-align: center;
     i {
       color: #FB4D3A;
     }
-  }
-  img {
-    display: inline-block;
-    vertical-align: middle;
-    width: .12rem;
-    height: .24rem;
-    margin-left: .1rem;
+    span {
+      display: inline-block;
+      vertical-align: middle;
+      margin-left: .1rem;
+      margin-bottom: .05rem;
+      width: .12rem;
+      height: .24rem;
+      background: url('../../../images/investDetail/user.png') no-repeat;
+      background-size: 100%;
+    }
   }
 }
 
-// 新手优惠
-.newPerson {
+//计划进度
+.planProgress {
+  height: 2.92rem;
+  padding: 0 .3rem;
   background-color: #fff;
-  height: 2.12rem;
-  padding: .3rem 0 .3rem .56rem;
-  box-sizing: border-box;
+  margin: .16rem 0;
+  overflow: hidden;
   h4 {
     font-size: .3rem;
-    color: #333;
     line-height: .3rem;
-    position: relative;
-    &:after {
-      content: '';
-      position: absolute;
+    color: #333;
+    margin: .3rem 0;
+    i {
       width: .06rem;
       height: .3rem;
       background-color: #FB4F3B;
-      top: 0;
-      left: -.2rem;
+      display: inline-block;
+      vertical-align: middle;
+      margin-right: .2rem;
+    }
+  }
+  .planStep {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .steps {
+      width: 33.3%;
+      position: relative;
+      .icon1,
+      .icon2,
+      .icon3 {
+        position: relative;
+        height: .8rem;
+        width: .8rem;
+        border-radius: 50%;
+        background-color: rgba(251, 97, 59, 0.09);
+        margin: 0 auto;
+        overflow: hidden;
+        div {
+          width: .4rem;
+          height: .46rem;
+          margin: .2rem auto 0;
+        }
+      }
+      .icon1 div {
+        background: url('../../../images/investDetail/start.png') no-repeat;
+        background-size: 100%;
+      }
+      .icon2 div {
+        background: url('../../../images/investDetail/match.png') no-repeat;
+        background-size: 100%;
+      }
+      .icon3 div {
+        background: url('../../../images/investDetail/end.png') no-repeat;
+        background-size: 100%;
+      }
+      p {
+        font-size: .22rem;
+        line-height: .22rem;
+        color: #333;
+        text-align: center;
+        &:nth-of-type(1) {
+          margin: .26rem 0 .1rem;
+        }
+      }
+      &:after {
+        content: '';
+        position: absolute;
+        width: 69%;
+        height: .02rem;
+        background-color: #EFEDEC;
+        top: .4rem;
+        left: 65%;
+      }
+      &:last-child {
+        &:after {
+          content: '';
+          position: absolute;
+          height: 0;
+        }
+      }
+    }
+  }
+}
+
+//安全等级和评测
+.safety {
+  background-color: #fff;
+  padding: .3rem .3rem 0;
+  overflow: hidden;
+  .safeLevel,
+  .investor {
+    border-bottom: 1px solid rgba(0, 0, 0, .1);
+    position: relative;
+    .stars {
+      display: flex;
+      justify-content: flex-start;
+      position: relative;
+      .icon1 {
+        width: .28rem;
+        height: .32rem;
+        background: url('../../../images/investDetail/icon1.png') no-repeat;
+        background-size: 100%;
+      }
+      .itemName {
+        font-size: .24rem;
+        line-height: .24rem;
+        color: #333;
+        margin-left: .2rem;
+        margin-right: .1rem;
+      }
+      .starIcon {
+        display: flex;
+        justify-content: space-between;
+        span {
+          width: .28rem;
+          height: .26rem;
+          background: url('../../../images/investDetail/star.png') no-repeat;
+          background-size: 100%;
+          margin-right: .06rem;
+        }
+      }
+      a {
+        width: .12rem;
+        height: .22rem;
+        display: block;
+        background: url('../../../images/investDetail/user.png') no-repeat;
+        background-size: 100%;
+        position: absolute;
+        top: 0;
+        right: .1rem;
+      }
+    }
+  }
+  .investor {
+    border-bottom: none;
+    margin-top: .3rem;
+    .stars {
+      .icon1 {
+        background: url('../../../images/investDetail/icon2.png') no-repeat;
+        background-size: 100%;
+      }
     }
   }
   p {
     font-size: .24rem;
-    color: #333;
     line-height: .24rem;
-    margin: .36rem 0;
-    padding-left: .32rem;
-    position: relative;
-    &:after {
-      content: '';
-      width: .32rem;
-      height: .32rem;
-      position: absolute;
-      background: url('../../images/icon3.png') no-repeat;
-      background-size: 100%;
-      left: -.1rem;
-      top: -.05rem;
-    }
-  }
-}
-
-// 计划进度
-.task-progress {
-  background-color: #fff;
-  height: 2.92rem;
-  padding: .3rem 0 .3rem .3rem;
-  .title {
-    font-size: .3rem;
-    color: #333;
-    font-weight: normal;
-    position: relative;
-    padding-left: .2rem;
-    &:after {
-      content: '';
-      position: absolute;
-      left: 0;
-      top: 50%;
-      margin-top: -.15rem;
-      width: .06rem;
-      height: .3rem;
-      background-color: #FB4F3B;
-    }
-  }
-  .task {
-    display: flex;
-    justify-content: space-between;
-    li {
-      width: 33.33%;
-      text-align: center;
-      height: 1.6rem;
-      position: relative;
-      &:after {
-        content: '';
-        position: absolute;
-        width: 100%;
-        height: 1px;
-        background-color: #EFEDEC;
-        left: 50%;
-        top: 25%;
-        z-index: 1;
-      }
-      &:last-child:after {
-        content: '';
-        position: absolute;
-        height: 0;
-      }
-      .bg {
-        width: .8rem;
-        height: .8rem;
-        border-radius: 50%;
-        background-color: #fef0ec !important;
-        margin: 0 auto .13rem;
-        box-sizing: border-box;
-      }
-      img {
-        position: relative;
-        z-index: 11;
-        width: .4rem;
-        height: .4rem;
-        margin: .2rem auto 0;
-      }
-      p {
-        color: #333;
-        font-size: .22rem;
-      }
-      p:nth-of-type(2) {
-        color: #999;
-      }
-    }
-  }
-}
-
-//安全等级
-.safe {
-  background-color: #fff;
-  padding: 0 .3rem 0 .78rem;
-  box-sizing: border-box;
-  a {
-    text-decoration: none !important;
-    color: none;
-    display: block;
-    padding: .3rem 0;
-    height: 1.7rem;
-    box-sizing: border-box;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    position: relative;
-    &:after {
-      content: '';
-      position: absolute;
-      background: url('../../images/icon1.png') no-repeat;
-      background-size: 100%;
-      width: .28rem;
-      height: .32rem;
-      top: .38rem;
-      left: -.48rem;
-    }
-    &:nth-of-type(2):after {
-      background: url('../../images/icon2.png') no-repeat;
-      background-size: 100%;
-    }
-    &:last-child {
-      border-bottom: none;
-    }
-    .safe_title {
-      margin-bottom: .3rem;
-      position: relative;
-      span {
-        font-size: .26rem;
-        color: #333;
-        vertical-align: middle;
-        font-weight: normal;
-      }
-      img {
-        display: inline-block;
-        vertical-align: middle;
-        width: .28rem;
-        height: .26rem;
-        margin-left: .06rem;
-      }
-      .more {
-        width: .12rem;
-        height: .24rem;
-        position: absolute;
-        right: .1rem;
-        top: 50%;
-        margin-top: -.12rem;
-      }
-    }
-    p {
-      font-size: .24rem;
-      color: #999;
-      line-height: .24rem;
-    }
-  }
-}
-
-//产品介绍列表
-.introProduct {
-  background-color: #fff;
-  li {
-    height: .92rem;
-    line-height: .92rem;
-    padding: 0 .4rem 0 .78rem;
-    position: relative;
-    border-bottom: 1px solid rgba(0, 0, 0, .1);
-    &:nth-of-type(3){
-      border-bottom: none;
-    }
-    &:after {
-      content: '';
-      position: absolute;
-      width: .28rem;
-      height: .32rem;
-      left: .3rem;
-      top: 50%;
-      margin-top: -.16rem;
-    }
-    &:nth-of-type(1):after {
-      background: url('../../images/icon2.png') no-repeat;
-      background-size: 100%;
-    }
-    &:nth-of-type(2):after {
-      background: url('../../images/icon4.png') no-repeat;
-      background-size: 100%;
-    }
-    &:nth-of-type(3):after {
-      background: url('../../images/icon5.png') no-repeat;
-      background-size: 100%;
-    }
-    a {
-      border-bottom: 1px solid rgba(0, 0, 0, .1);
-      display: block;
-      color: #333 !important;
-      font-size: .24rem;
-      text-decoration: none !important;
-      &:last-child{
-        border-bottom: none;
-      }
-      img{
-        display: inline-block;
-        vertical-align: middle;
-        width: .12rem;
-        height: .24rem;
-        position: absolute;
-        right: .4rem;
-        top: 50%;
-        margin-top: -.12rem;
-      }
-    }
-  }
-}
-//底部
-.foot{
-  height: 3.52rem;
-  overflow: hidden;
-  background-color: #f6f6f6;
-  p{
-    text-align: center;
-    font-size: .24rem;
     color: #999;
-    margin-top: .6rem;
+    margin: .3rem 0;
+    margin-left: .48rem;
   }
 }
-.investBtn{
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  z-index: 99;
-  margin-top: -.96rem;
-  display: block;
-  height: .96rem;
-  width: 100%;
-  line-height: .96rem;
-  text-align: center;
-  color: #fff !important;
-  font-size: .32rem;
-  text-decoration: none !important;
-  background-image: linear-gradient(-90deg, #FB4D3A 0%, #FF7F5C 100%);
-  box-shadow: 0 -1px 5px 0 rgba(0,0,0,0.06);
+
+//产品描述
+.description {
+  height: 2.6rem;
+  background-color: #fff;
+  margin-top: .16rem;
+  ul {
+    padding: 0 .3rem 0 .72rem;
+    li {
+      height: .84rem;
+      position: relative;
+      color: #333;
+      font-size: .24rem;
+      line-height: .84rem;
+      border-bottom: 1px solid rgba(0, 0, 0, .1);
+      span {
+        width: .28rem;
+        height: .32rem;
+        position: absolute;
+        top: 50%;
+        left: -.41rem;
+        margin-top: -.16rem;
+        background: url('../../../images/investDetail/icon2.png') no-repeat;
+        background-size: 100%;
+      }
+      a {
+        height: .22rem;
+        width: .12rem;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        margin-top: -.11rem;
+        background: url('../../../images/investDetail/user.png') no-repeat;
+        background-size: 100%;
+      }
+      &:nth-of-type(2) {
+        span {
+          background: url('../../../images/investDetail/icon4.png') no-repeat;
+          background-size: 100%;
+        }
+      }
+      &:nth-of-type(3) {
+        border-bottom: none;
+        span {
+          background: url('../../../images/investDetail/icon5.png') no-repeat;
+          background-size: 100%;
+        }
+      }
+    }
+  }
+  p {
+    color: #999;
+    font-size: .24rem;
+    line-height: .24rem;
+    margin-top: .6rem;
+    text-align: center;
+    margin-bottom: 2.68rem;
+  }
+  .investBtn {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    height: .96rem;
+    width: 100%;
+    z-index: 9999;
+    line-height: .96rem;
+    font-size: .32rem;
+    background-image: linear-gradient(90deg, #FF7F5C 0%, #FB4D3A 100%);
+    box-shadow: 0 -1px 5px 0 rgba(0, 0, 0, 0.06);
+    text-align: center;
+    color: #fff;
+  }
 }

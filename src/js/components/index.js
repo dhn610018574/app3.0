@@ -30,12 +30,10 @@ export {default as AppPanel} from './My/AppPanel.jsx'
 
 
 //投资详情页
-export {default as IconTitle} from './InvestDetail/IconTitle.jsx'
-export {default as IntrolProduct} from './InvestDetail/IntrolProduct.jsx'
-export {default as NewPerson} from './InvestDetail/NewPerson.jsx'
+export {default as InvestDetailTitle} from './InvestDetail/InvestDetailTitle.jsx'
+export {default as ProductDetails} from './InvestDetail/ProductDetails.jsx'
 export {default as PlanProgress} from './InvestDetail/PlanProgress.jsx'
-export {default as Progress} from './InvestDetail/Progress.jsx'
-export {default as Safe} from './InvestDetail/Safe.jsx'
-export {default as User} from './InvestDetail/User.jsx'
-export {default as YearRale} from './InvestDetail/YearRale.jsx'
+export {default as Safety} from './InvestDetail/Safety.jsx'
+export {default as ProductDescription} from './InvestDetail/ProductDescription.jsx'
+
 

@@ -7,7 +7,7 @@ export default class NcpProduct extends Component {
       <div className='ncpProduct'>
         <ul>
           <li>
-            <Link to="">
+            <Link to="investDetail">
               <div className='product-introl'>
                 <div>
                   <span>高回报</span>
