@@ -14,12 +14,13 @@
   height: .93rem;
   li {
     height: .92rem;
-    width: 25%;
+    width: 33.3%;
     text-align: center;
     font-size: .28rem;
     line-height: .92rem;
     color: #666;
     display: block;
+    margin-left: 0;
     &.active {
       color: #FB4D3A;
       border-bottom: .04rem solid #FB4D3A;

@@ -38,6 +38,7 @@ body {
   }
   li.slider-slide {
     transform: scale(.8);
+    border-bottom: none;
   }
   img {
     box-shadow: 0px 0px 10px cyan;
@@ -52,6 +53,7 @@ body {
     li {
       .v-item {
         height: .6rem;
+        border-bottom: none;
       }
     }
   }
