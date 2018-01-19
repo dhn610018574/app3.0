@@ -6,7 +6,7 @@ export default class ProductDetail extends Component {
   render() {
     return(
       <div className='productDetail'>
-        <CommonHeader title='方案详情'></CommonHeader>
+        <CommonHeader title='方案详情' url='investDetail'></CommonHeader>
         <table>
           <tbody>
             <tr>

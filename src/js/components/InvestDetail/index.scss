@@ -334,7 +334,7 @@
   background-color: #fff;
   margin-top: .16rem;
   ul {
-    padding: 0 .3rem 0 .72rem;
+    padding: 0 .3rem 0 .42rem;
     li {
       height: .84rem;
       position: relative;
@@ -342,7 +342,7 @@
       font-size: .24rem;
       line-height: .84rem;
       border-bottom: 1px solid rgba(0, 0, 0, .1);
-      >a{
+      >a {
         display: block;
         height: 100%;
         width: 100%;
@@ -382,12 +382,15 @@
       }
     }
   }
-  p {
-    color: #999;
-    font-size: .24rem;
-    line-height: .24rem;
-    margin-top: .6rem;
-    text-align: center;
-    margin-bottom: 2.68rem;
+  div {
+    height: 3.4rem;
+    overflow: hidden;
+    p {
+      color: #999;
+      font-size: .24rem;
+      line-height: .24rem;
+      margin-top: .6rem;
+      text-align: center;
+    }
   }
 }

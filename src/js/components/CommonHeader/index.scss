@@ -1,4 +1,9 @@
 // title
+.commonHeader{
+  height: .88rem;
+  overflow: hidden;
+  margin-bottom: .16rem;
+}
 .commontitle {
   color: #333;
   font-size: .36rem;
@@ -11,7 +16,6 @@
   top: 0;
   left: 0;
   width: 100%;
-  overflow: hidden;
   z-index: 9999;
   border-bottom: 1px solid #ddd;
   span {

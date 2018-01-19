@@ -6,7 +6,7 @@ export default class InvestLog extends Component {
   render() {
     return(
       <div className='investLog'>
-        <CommonHeader title="投资记录"></CommonHeader>
+        <CommonHeader title="投资记录" url='investDetail'></CommonHeader>
         <div className='logNum'>共 <i>93</i> 位用户投资</div>
         <ul>
           <li>

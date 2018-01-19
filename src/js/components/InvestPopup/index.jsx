@@ -2,26 +2,11 @@ import React ,{Component} from 'react'
 import {Link} from 'react-router'
 import './index.scss'
 export default class InvestPopup extends Component {
-  constructor(props){
-    super(props);
-    this.state = {
-      isShow:props.show
-    }
-  }
-  close() {
-    this.setState({
-      isShow:false
-    })
-  }
-
   render () {
-    let isClose = this.state.isShow
-    console.log(isClose)
-    isClose = isClose == true?"block":"none"
     return(
-      <div className='popup' style={{display:isClose}}>
+      <div className='popup'>
         <div className='mask'>
-          <div className='mask_title'>投资<i onClick={this.close.bind(this)}></i></div>
+          <div className='mask_title'>投资<i></i></div>
           <div className='popContent'>
             <p className='hope'>
               <span>期望年化收益率<i>7.00%</i></span>

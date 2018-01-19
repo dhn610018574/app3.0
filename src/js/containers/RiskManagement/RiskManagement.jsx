@@ -11,7 +11,7 @@ export default class RiskManagement extends Component {
   render() {
     return(
       <div>
-        <CommonHeader title='风险控制'></CommonHeader>
+        <CommonHeader title='风险控制' url='home'></CommonHeader>
         <TabComponent></TabComponent>
       </div>
     )

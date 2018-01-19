@@ -6,7 +6,7 @@ export default class NoviceWelfare extends Component {
   render() {
     return(
       <div>
-        <CommonHeader title='新手福利'></CommonHeader>
+        <CommonHeader title='新手福利' url='investDetail'></CommonHeader>
         <div className="banner"></div>
         <div className='fit_flow'>
           <div className='flow1'>

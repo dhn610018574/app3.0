@@ -12,7 +12,7 @@ export default class ProductDescription extends Component {
           <li><Link to='productFeatures'><span></span>方案特色<e></e></Link></li>
           <li><Link to='commonProblem'><span></span>常见问题<e></e></Link></li>
         </ul>
-        <p>--资金由上海银行存管--</p>
+        <div><p>--资金由上海银行存管--</p></div>
       </div>
     )
   }

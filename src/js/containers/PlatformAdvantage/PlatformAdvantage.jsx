@@ -9,7 +9,7 @@ export default class PlatformAdvantage extends Component {
   render() {
     return(
       <div>
-        <CommonHeader title='平台优势'></CommonHeader>
+        <CommonHeader title='平台优势' url='home'></CommonHeader>
         <TabComponent></TabComponent>
       </div>
     )

@@ -2,8 +2,11 @@ import React ,{Component} from 'react'
 import {Router, Route, Link, browserHistory, IndexRoute, hashHistory} from 'react-router'
 import './index.scss'
 export default class InvestDetailTitle extends Component {
+  constructor(props){
+    super(props)
+  }
   goback(){
-    history.back()
+    browserHistory.push(this.props.url)
   }
   render(){
     return(

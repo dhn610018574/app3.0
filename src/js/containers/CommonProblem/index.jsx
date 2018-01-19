@@ -6,7 +6,7 @@ export default class CommonProblem extends Component {
   render() {
     return(
       <div className='qa'>
-        <CommonHeader title='常见问题'></CommonHeader>
+        <CommonHeader title='常见问题' url='investDetail'></CommonHeader>
         <div className='question'>
           <p><i></i>加入投资方案的资金投到哪？</p>
           <p>您的资金将自动分散出借给通过信而富严格风控审核、信用良好、有足够还款能力的借款人，如此既能帮助他人，又能获得较高的稳健收益。</p>

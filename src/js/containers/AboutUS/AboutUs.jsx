@@ -11,7 +11,7 @@ export default class AboutUs extends Component {
   render() {
     return(
       <div>
-        <CommonHeader title='关于我们'></CommonHeader>
+        <CommonHeader title='关于我们' url='home'></CommonHeader>
         <TabComponent></TabComponent>
       </div>
     )

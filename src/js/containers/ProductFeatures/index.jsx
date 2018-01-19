@@ -6,7 +6,7 @@ export default class ProductFeatures extends Component {
   render() {
     return(
       <div className='productFeatures'>
-        <CommonHeader title='方案特色'></CommonHeader>
+        <CommonHeader title='方案特色' url='investDetail'></CommonHeader>
         <ul>
           <li></li>
           <li></li>
