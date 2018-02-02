@@ -48,7 +48,6 @@ const FetchInterface = {
       .then(checkStatus)
       .then(parse)
       .then(data => {
-        console.log(data)
         resolve(data)
       })
       .catch(error => {

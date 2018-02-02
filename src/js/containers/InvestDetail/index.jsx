@@ -15,28 +15,7 @@ export default class InvestDetail extends Component {
     this.state = {
       isShow:false,
       contractPrefix:props.location.query.contractPrefix,
-      data:{
-      classNo:"",
-      closeTime:0,
-      contractPrefix:"",
-      finishAmount:"",
-      freezePeriod:"",
-      investunit:"",
-      isFull:"",
-      isNewBie:"",
-      lowestAmount:"",
-      planAmount:"",
-      productName:"",
-      productType:"",
-      remainDays:0,
-      saleTime:0,
-      shareUrl:"",
-      tipsEnd:"",
-      tipsStart:"",
-      type:"",
-      uuid:"",
-      yInterestRate:""
-      }
+      count:0
     }
   }
   show() {
@@ -55,15 +34,26 @@ export default class InvestDetail extends Component {
   }
   async getInitialData() {
     let investmentPath = `${CONFIGS.investmentPath}/product/${this.state.contractPrefix}/detail`
+    let recordPath = `${CONFIGS.investmentPath}/product/record?${this.state.contractPrefix}&pageNumber=0&pageSize=20`
     try{
-      let fetchPromise = CRFFetch.Get(investmentPath);
-      let result = await fetchPromise;
+      let fetchPromise = CRFFetch.Get(investmentPath)
+      let recordPromise = CRFFetch.Get(recordPath)
+
+      let result = await fetchPromise
+      let recordResult = await recordPromise
+      console.log(recordResult)
       if(result && !result.response) {
         this.setState({
           isShow:false
         })
         this.setStatus(result.data)
       }
+      if(recordResult && !recordResult.response){
+        this.setStatus({
+          count:recordResult.data.count
+        })
+      }
+      console.log(this.state)
     }catch(error){
       this.setState({
         isShow:false
@@ -79,7 +69,6 @@ export default class InvestDetail extends Component {
   }
   setStatus(result) {
     this.setState(result)
-    console.log(result)
   }
 
   render() {
@@ -87,9 +76,9 @@ export default class InvestDetail extends Component {
     const display = this.state.isShow == true ? "block" : "none"
     return(
       <div style={{overflowY:overFlow}}>
-        <InvestDetailTitle url='home' classNo={this.state.data.classNo}/>
-        <ProductDetails />
-        <PlanProgress />
+        <InvestDetailTitle url='home' classNo={this.state.classNo}/>
+        <ProductDetails detailData={this.state} count={this.state.count}/>
+        <PlanProgress progress={this.state}/>
         <Safety />
         <ProductDescription />
         <div className='investBtn' onClick={this.show.bind(this)}>马上投资</div>

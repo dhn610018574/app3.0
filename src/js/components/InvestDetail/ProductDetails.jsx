@@ -4,45 +4,57 @@ import './index.scss'
 export default class ProductDetails extends Component {
   constructor(props) {
     super(props);
-
+    
   }
+
   render(){
+    let float = parseFloat(this.props.detailData.finishAmount)/parseFloat(this.props.detailData.planAmount)
+    let reset = this.props.detailData.planAmount - this.props.detailData.finishAmount
+    if(!float){
+      float = 0
+    }
+    let width = (100-float)+"%"
+    console.log(width)
     return(
       <div className='productDetails'>
         <div className='timeAndTips'>
-          <h6 className='closeTime'>截止日期：</h6>
+          <h6 className='closeTime'>截止日期：{Common.formatDate(this.props.detailData.closeTime,"-").YMD}</h6>
           <div className='tips'>
-            <span>新手福利</span>
-            <span>高收益</span>
+          {
+            this.props.detailData.tipsStart && <span>{this.props.detailData.tipsStart}</span>
+          }
+          {
+            this.props.detailData.tipsEnd && <span>{this.props.detailData.tipsEnd}</span>
+          }
           </div>
         </div>
         <p className='hopeYearRate'><i className='left'></i>期望年化收益率<i className='right'></i></p>
-        <p className='yearRate'>7.00<e>%</e></p>
+        <p className='yearRate'>{this.props.detailData.yInterestRate}<e>%</e></p>
         <div className='investLimit'>
           <div>
             <p>起投金额</p>
-            <p>500元</p>
+            <p>{this.props.detailData.lowestAmount}元</p>
           </div>
           <div>
             <p>锁定出借期</p>
-            <p>30天</p>
+            <p>{this.props.detailData.freezePeriod}天</p>
           </div>
           <div>
             <p>计划金额</p>
-            <p>50万元</p>
+            <p>{this.props.detailData.planAmount}万元</p>
           </div>
 
         </div>
         <div className='progress'>
           <p className='speed'>
-            <span>进度 65%</span>
-            <span>剩余可投20万元</span>
+            <span>进度 {float}%</span>
+            <span>剩余可投{reset}万元</span>
           </p>
           <div className='progressBar'>
-            <div className='finished'></div>
+            <div className='finished' style={{width:width}}></div>
           </div>
         </div>
-        <Link to='investLog' className='investNum'>已有<i>53</i>人投资<span></span></Link>
+        <Link to='investLog' className='investNum'>已有<i>{this.props.count}</i>人投资<span></span></Link>
       </div>
     )
   }
