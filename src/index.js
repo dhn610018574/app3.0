@@ -4,8 +4,11 @@ import Routers from './js/Routers.jsx';
 import './styles/normalize.scss'
 import './styles/_base.scss'
 import './styles/home.scss'
-
-global.GONFIGS = require('./js/config')
+global.CRFFetch = require('./js/utils/ajax/index')
+global.CONFIGS = require('./js/config')
+require('es6-promise/auto');
+require('whatwg-fetch');
+require('../mock/home.json')
 
 import {Router,Route,IndexRoute, Link,browserHistory} from 'react-router'
 ReactDom.render(

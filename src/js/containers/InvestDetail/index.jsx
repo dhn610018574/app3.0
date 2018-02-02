@@ -1,5 +1,6 @@
 import React ,{Component} from 'react'
 import { Link } from 'react-router'
+import {Toast} from 'antd-mobile'
 import './index.scss'
 import {
   InvestDetailTitle,
@@ -12,7 +13,30 @@ export default class InvestDetail extends Component {
   constructor(props){
     super(props);
     this.state = {
-      isShow:false
+      isShow:false,
+      contractPrefix:props.location.query.contractPrefix,
+      data:{
+      classNo:"",
+      closeTime:0,
+      contractPrefix:"",
+      finishAmount:"",
+      freezePeriod:"",
+      investunit:"",
+      isFull:"",
+      isNewBie:"",
+      lowestAmount:"",
+      planAmount:"",
+      productName:"",
+      productType:"",
+      remainDays:0,
+      saleTime:0,
+      shareUrl:"",
+      tipsEnd:"",
+      tipsStart:"",
+      type:"",
+      uuid:"",
+      yInterestRate:""
+      }
     }
   }
   show() {
@@ -25,17 +49,49 @@ export default class InvestDetail extends Component {
       isShow:false
     })
   }
+  componentDidMount(){
+    document.body.scrollTop = 0;
+    this.getInitialData();
+  }
+  async getInitialData() {
+    let investmentPath = `${CONFIGS.investmentPath}/product/${this.state.contractPrefix}/detail`
+    try{
+      let fetchPromise = CRFFetch.Get(investmentPath);
+      let result = await fetchPromise;
+      if(result && !result.response) {
+        this.setState({
+          isShow:false
+        })
+        this.setStatus(result.data)
+      }
+    }catch(error){
+      this.setState({
+        isShow:false
+      })
+      CRFFetch.handleError(error,Toast,()=>{
+        if(error.status === 400) {
+          error.body.then(data => {
+            Toast.info(data.message)
+          })
+        }
+      })
+    }
+  }
+  setStatus(result) {
+    this.setState(result)
+    console.log(result)
+  }
 
   render() {
     const overFlow = this.state.isShow==true ? "hidden" : ""
     const display = this.state.isShow == true ? "block" : "none"
     return(
       <div style={{overflowY:overFlow}}>
-        <InvestDetailTitle url='home'/>
-        <ProductDetails/>
-        <PlanProgress/>
-        <Safety/>
-        <ProductDescription/>
+        <InvestDetailTitle url='home' classNo={this.state.data.classNo}/>
+        <ProductDetails />
+        <PlanProgress />
+        <Safety />
+        <ProductDescription />
         <div className='investBtn' onClick={this.show.bind(this)}>马上投资</div>
         <div className='popup' style={{display:display}}>
           <div className='mask'>
@@ -66,7 +122,8 @@ export default class InvestDetail extends Component {
                 </span>
               </div>
             </div>
-            <div className='investBtn1'>马上加入</div>
+            <Link to='' className='investBtn1'>马上加入</Link>            
+            {/*<Link to='' className='investBtn1'>余额不足，去充值</Link> */}           
           </div>
         </div>
       </div>

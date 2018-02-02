@@ -48,6 +48,7 @@ const FetchInterface = {
       .then(checkStatus)
       .then(parse)
       .then(data => {
+        console.log(data)
         resolve(data)
       })
       .catch(error => {
@@ -55,7 +56,6 @@ const FetchInterface = {
         reject(error)
       })
     });
-
     return defer;
   },
   // do post
@@ -121,7 +121,6 @@ const FetchInterface = {
 
       switch(status){
         case 400:
-
           break;
         case 401:
           CRFLogin.initialize(fn);

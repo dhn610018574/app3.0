@@ -2,11 +2,15 @@ import React ,{Component} from 'react'
 import {Link} from 'react-router'
 import './index.scss'
 export default class ProductDetails extends Component {
+  constructor(props) {
+    super(props);
+
+  }
   render(){
     return(
       <div className='productDetails'>
         <div className='timeAndTips'>
-          <h6 className='closeTime'>截止日期：2017-06-20</h6>
+          <h6 className='closeTime'>截止日期：</h6>
           <div className='tips'>
             <span>新手福利</span>
             <span>高收益</span>
