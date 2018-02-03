@@ -1,11 +1,11 @@
-import React ,{Component} from 'react'
-import {Link} from 'react-router'
+import React, { Component } from 'react'
+import { Link } from 'react-router'
 import './index.scss'
-import {InvestPopup} from '../../components'
+import { InvestPopup } from '../../components'
 export default class ProductDescription extends Component {
 
-  render(){
-    return(
+  render() {
+    return (
       <div className='description'>
         <ul>
           <li><Link to='productDetail'><span></span>方案详情<e></e></Link></li>

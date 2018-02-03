@@ -1,6 +1,6 @@
-import React ,{Component} from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router'
-import {Toast} from 'antd-mobile'
+import { Toast } from 'antd-mobile'
 import './index.scss'
 import {
   InvestDetailTitle,
@@ -10,56 +10,54 @@ import {
   ProductDescription
 } from '../../components'
 export default class InvestDetail extends Component {
-  constructor(props){
+  constructor(props) {
     super(props);
     this.state = {
-      isShow:false,
-      contractPrefix:props.location.query.contractPrefix,
-      count:0
+      isShow: false,
+      contractPrefix: props.location.query.contractPrefix,
+      count: 0
     }
   }
   show() {
     this.setState({
-      isShow:true
+      isShow: true
     })
   }
   hide() {
     this.setState({
-      isShow:false
+      isShow: false
     })
   }
-  componentDidMount(){
+  componentDidMount() {
     document.body.scrollTop = 0;
     this.getInitialData();
   }
   async getInitialData() {
     let investmentPath = `${CONFIGS.investmentPath}/product/${this.state.contractPrefix}/detail`
     let recordPath = `${CONFIGS.investmentPath}/product/record?${this.state.contractPrefix}&pageNumber=0&pageSize=20`
-    try{
+    try {
       let fetchPromise = CRFFetch.Get(investmentPath)
       let recordPromise = CRFFetch.Get(recordPath)
 
       let result = await fetchPromise
       let recordResult = await recordPromise
-      console.log(recordResult)
-      if(result && !result.response) {
+      if (result && !result.response) {
         this.setState({
-          isShow:false
+          isShow: false
         })
         this.setStatus(result.data)
       }
-      if(recordResult && !recordResult.response){
+      if (recordResult && !recordResult.response) {
         this.setStatus({
-          count:recordResult.data.count
+          count: recordResult.data.count
         })
       }
-      console.log(this.state)
-    }catch(error){
+    } catch (error) {
       this.setState({
-        isShow:false
+        isShow: false
       })
-      CRFFetch.handleError(error,Toast,()=>{
-        if(error.status === 400) {
+      CRFFetch.handleError(error, Toast, () => {
+        if (error.status === 400) {
           error.body.then(data => {
             Toast.info(data.message)
           })
@@ -72,17 +70,17 @@ export default class InvestDetail extends Component {
   }
 
   render() {
-    const overFlow = this.state.isShow==true ? "hidden" : ""
+    const overFlow = this.state.isShow == true ? "hidden" : ""
     const display = this.state.isShow == true ? "block" : "none"
-    return(
-      <div style={{overflowY:overFlow}}>
-        <InvestDetailTitle url='home' classNo={this.state.classNo}/>
-        <ProductDetails detailData={this.state} count={this.state.count}/>
-        <PlanProgress progress={this.state}/>
+    return (
+      <div style={{ overflowY: overFlow }}>
+        <InvestDetailTitle url='home' classNo={this.state.classNo} />
+        <ProductDetails detailData={this.state} count={this.state.count} />
+        <PlanProgress progress={this.state} />
         <Safety />
         <ProductDescription />
         <div className='investBtn' onClick={this.show.bind(this)}>马上投资</div>
-        <div className='popup' style={{display:display}}>
+        <div className='popup' style={{ display: display }}>
           <div className='mask'>
             <div className='mask_title'>投资<i onClick={this.hide.bind(this)}></i></div>
             <div className='popContent'>
@@ -92,15 +90,15 @@ export default class InvestDetail extends Component {
               </p>
               <p className='residue'>投资可用余额:<i>3666</i>元</p>
               <div className='add'>
-                <input type="button" className='minus'/>
-                <input type="tel" className='num' placeholder='500'/>
-                <input type="button" className='add'/>
+                <input type="button" className='minus' />
+                <input type="tel" className='num' placeholder='500' />
+                <input type="button" className='add' />
               </div>
               <p className='expected'>预期收益:<i>150</i>元 (同期银行活期收益为1.3元)</p>
               <Link className='chooseSpot' to=''>
-                  <div className='icon'></div>
-                  <p>选择返现券</p>
-                  <div className='goSpot'></div>
+                <div className='icon'></div>
+                <p>选择返现券</p>
+                <div className='goSpot'></div>
               </Link>
               <div className='agreement'>
                 <span className='active'></span>
@@ -111,8 +109,8 @@ export default class InvestDetail extends Component {
                 </span>
               </div>
             </div>
-            <Link to='' className='investBtn1'>马上加入</Link>            
-            {/*<Link to='' className='investBtn1'>余额不足，去充值</Link> */}           
+            <Link to='' className='investBtn1'>马上加入</Link>
+            {/*<Link to='' className='investBtn1'>余额不足，去充值</Link> */}
           </div>
         </div>
       </div>

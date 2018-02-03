@@ -1,10 +1,13 @@
-import React ,{Component} from 'react'
-import {Router,Route,IndexRoute, Link} from 'react-router'
-import {CommonHeader} from '../../components'
+import React, { Component } from 'react'
+import { Router, Route, IndexRoute, Link } from 'react-router'
+import { CommonHeader } from '../../components'
 import './index.scss'
 export default class InvestLog extends Component {
+  componentDidMount() {
+    document.body.scrollTop = 0;
+  }
   render() {
-    return(
+    return (
       <div className='investLog'>
         <CommonHeader title="投资记录" url='investDetail'></CommonHeader>
         <div className='logNum'>共 <i>93</i> 位用户投资</div>
@@ -31,7 +34,7 @@ export default class InvestLog extends Component {
             <div className='sum'>40,000元</div>
           </li>
         </ul>
-      
+
       </div>
     )
   }

@@ -1,10 +1,13 @@
-import React ,{Component} from 'react'
-import {Link} from 'react-router'
-import {CommonHeader} from '../../components'
+import React, { Component } from 'react'
+import { Link } from 'react-router'
+import { CommonHeader } from '../../components'
 import './index.scss'
 export default class CommonProblem extends Component {
+  componentDidMount() {
+    document.body.scrollTop = 0;
+  }
   render() {
-    return(
+    return (
       <div className='qa'>
         <CommonHeader title='常见问题' url='investDetail'></CommonHeader>
         <div className='question'>

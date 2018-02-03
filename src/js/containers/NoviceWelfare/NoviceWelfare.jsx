@@ -1,10 +1,13 @@
-import React ,{Component} from 'react'
-import {browserHistory} from 'react-router'
-import {CommonHeader} from '../../components'
+import React, { Component } from 'react'
+import { browserHistory } from 'react-router'
+import { CommonHeader } from '../../components'
 import './index.scss'
 export default class NoviceWelfare extends Component {
+  componentDidMount() {
+    document.body.scrollTop = 0;
+  }
   render() {
-    return(
+    return (
       <div>
         <CommonHeader title='新手福利' url='investDetail'></CommonHeader>
         <div className="banner"></div>
@@ -48,7 +51,7 @@ export default class NoviceWelfare extends Component {
           <h4><i></i>活动规则<i></i></h4>
           <p className='regular'>1、返现红包可在信而富理财APP“我的”-“优惠红包”中查看，通过APP按优惠红包使用说明投资后即可提现，详见优惠红包使用规则;</p>
           <p className='regular'>2、现金红包将在投资完成后3个工作日内发至账户，可直接提现；</p>
-          <p className='regular'>3、活动详情可咨询信而富理财，客服热线: <br/>400-688-8692，服务时间：9:00-21:00</p>
+          <p className='regular'>3、活动详情可咨询信而富理财，客服热线: <br />400-688-8692，服务时间：9:00-21:00</p>
         </div>
       </div>
     )
