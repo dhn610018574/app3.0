@@ -113,6 +113,7 @@ const FetchInterface = {
     } else {
       let msg = err&&err.body;
       let status = err&&err.response&&err.response.status;
+      let code = err && err.responseText.code
 
       if(!fn){
         fn=()=>location.reload();
@@ -122,18 +123,27 @@ const FetchInterface = {
         case 400:
           break;
         case 401:
+        Toast.info('D_1登录超时');
           CRFLogin.initialize(fn);
           break;
         case 403:
-          Toast.info('您没有权限做此操作，请返回重试！');
+          Toast.info('D_3非法请求');
           break;
         case 404:
-          Toast.info('资源已经移除，访问出错！');
+        case 405:
+          Toast.info('D_4服务器繁忙，请稍后再试');
+          break;
+        case 406:
+          Toast.info('D_6请更新应用至最新版本');
+          break;
+        case 413:
+          Toast.info('D_13服务暂时无法使用，请联系客服');
           break;
         case 500:
         case 502:
+        case 503:
         case 504:
-          Toast.info('哎呀，服务器开小差了，请稍后再试吧!');
+          Toast.info('E_0服务器繁忙，请稍后再试');
           break;
         default:
           msg && msg.then(data => {

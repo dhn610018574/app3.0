@@ -14,21 +14,31 @@ export default class NcpProduct extends Component {
     this.getInitialData()
   }
   async getInitialData() {
-    let ncpProductPath = `${CONFIGS.investmentPath}/product/list`
-    let productPushPath = `${CONFIGS.investmentPath}/product/list/push`
+    const params = {
+      productListType:0,
+      pageSize:1000,
+      pageNumber:1
+    }
+    const headers = {
+      "Content-Type": "application/json;charset=UTF-8",
+      "version-code":"49",
+      "packageName":"com.crfchina.purseTest",
+      "mobileOs":"IOS",
+      "deviceno":"",
+      "clientId":"",
+      "mchntNo":"",
+      "accessToken":""
+    }
+    const ncpProductPath = `${CONFIGS.investmentPath}/product/newlist`
+    // const ncpProductPath = `${CONFIGS.investmentPath}/product/list`
     try{
-      let fetchPromise = CRFFetch.Post(ncpProductPath)
-      let pushFetchPromise = CRFFetch.Post(productPushPath)
-      let result = await fetchPromise
-      let pushResult = await pushFetchPromise
-      console.log(pushResult)
+      const fetchPromise = CRFFetch.Post(ncpProductPath,JSON.stringify(params),headers)
+      // const fetchPromise = CRFFetch.Post(ncpProductPath)
+      const result = await fetchPromise
       if(result && !result.response){
         this.setState(result.data)
       }
-      if(pushResult && pushResult.response) {
-        this.setStatus(pushResult)
-      }
-      console.log(this.state)
+
     }catch(error){
       CRFFetch.handleError(error,Toast,()=>{
         if(error.status === 400) {

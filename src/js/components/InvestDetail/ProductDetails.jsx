@@ -17,7 +17,7 @@ export default class ProductDetails extends Component {
     return(
       <div className='productDetails'>
         <div className='timeAndTips'>
-          <h6 className='closeTime'>截止日期：{Common.formatDate(data.closeTime, "-").YMD}</h6>
+          <h6 className='closeTime'>截止日期：{Common.formatDate(this.props.detailData.closeTime, "-").YMD}</h6>
           <div className='tips'>
           {
             this.props.detailData.isFull=="1"  && <span>满标</span>
@@ -31,7 +31,7 @@ export default class ProductDetails extends Component {
           </div>
         </div>
         <p className='hopeYearRate'><i className='left'></i>期望年化收益率<i className='right'></i></p>
-        <p className='yearRate'>{data.yInterestRate}<e>%</e></p>
+        <p className='yearRate'>{this.props.detailData.yInterestRate}<e>%</e></p>
         <div className='investLimit'>
           <div>
             <p>起投金额</p>
@@ -39,7 +39,7 @@ export default class ProductDetails extends Component {
           </div>
           <div>
             <p>锁定出借期</p>
-            <p>{data.freezePeriod}天</p>
+            <p>{this.props.detailData.freezePeriod}天</p>
           </div>
           <div>
             <p>计划金额</p>

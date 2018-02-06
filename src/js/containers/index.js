@@ -11,3 +11,6 @@ export {default as InvestLog} from './InvestLog/index.jsx'
 export {default as ProductDetail} from './ProductDetail/index.jsx'
 export {default as ProductFeatures} from './ProductFeatures/index.jsx'
 export {default as CommonProblem} from './CommonProblem/index.jsx'
+export {default as Login} from './Login/index.jsx'
+export {default as Register} from './Register/index.jsx'
+
