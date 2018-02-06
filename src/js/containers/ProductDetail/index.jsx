@@ -1,13 +1,13 @@
-import React ,{Component} from 'react'
-import {Router,Route,IndexRoute, Link} from 'react-router'
-import {CommonHeader} from '../../components'
+import React, { Component } from 'react'
+import { Router, Route, IndexRoute, Link } from 'react-router'
+import { CommonHeader } from '../../components'
 import './index.scss'
 export default class ProductDetail extends Component {
   componentDidMount(){
     document.body.scrollTop = 0
   }
   render() {
-    return(
+    return (
       <div className='productDetail'>
         <CommonHeader title='方案详情' url='investDetail'></CommonHeader>
         <table>

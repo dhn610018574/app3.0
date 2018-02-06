@@ -1,6 +1,6 @@
-import React ,{Component} from 'react'
-import { Link ,browserHistory} from 'react-router'
-import {CommonHeader} from '../../components'
+import React, { Component } from 'react'
+import { Link, browserHistory } from 'react-router'
+import { CommonHeader } from '../../components'
 import './index.scss'
 let companyHeight = 0
 let honorHeight = 0
@@ -12,7 +12,7 @@ export default class AboutUs extends Component {
     document.body.scrollTop = 0
   }
   render() {
-    return(
+    return (
       <div>
         <CommonHeader title='关于我们' url='home'></CommonHeader>
         <TabComponent></TabComponent>
@@ -21,96 +21,96 @@ export default class AboutUs extends Component {
   }
 }
 class TabController extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            currentIndex : 0
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentIndex: 0
     }
+  }
 
-    check_title_index(index) {
-        return index === this.state.currentIndex ? 'active':'' 
-    }
+  check_title_index(index) {
+    return index === this.state.currentIndex ? 'active' : ''
+  }
 
-    handleScroll(index) {
-      let top = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
-      switch(index){
-        case 0:
+  handleScroll(index) {
+    let top = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
+    switch (index) {
+      case 0:
         top = 0
         console.log(top)
         break;
-        case 1:
-        top = companyHeight+8
+      case 1:
+        top = companyHeight + 8
         console.log(top)
         break;
-        case 2:
-        top = companyHeight + honorHeight+15
+      case 2:
+        top = companyHeight + honorHeight + 15
         console.log(top)
         break;
-        case 3:
-        top = companyHeight + honorHeight + teamHeight+22
+      case 3:
+        top = companyHeight + honorHeight + teamHeight + 22
         console.log(top)
         break;
-      }
-      scrollTo({'behavior': 'smooth',top:top})
     }
-    render() {
-        const that = this;
-        return (
-            <div>
-                {/*动态生成tab*/}
-                <ul className='aboutTab'>
-                    {
-                        React.Children.map(that.props.children,(element,index)=>{
-                            return (
-                                <li 
-                                href='javascript:;'
-                                onClick={()=>{that.setState({currentIndex:index});that.handleScroll(index)}}
-                                className={that.check_title_index(index)}
-                                >
-                                {element.props.name}
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
-                {/*tab内容*/}
-                <div className="tabContent">
-                {
-                    React.Children.map(that.props.children,(element,index)=>{
-                        return (
-                            <div className='show'>
-                            {element}
-                            </div>
-                        )
-                    })
-                }                
+    scrollTo({ 'behavior': 'smooth', top: top })
+  }
+  render() {
+    const that = this;
+    return (
+      <div>
+        {/*动态生成tab*/}
+        <ul className='aboutTab'>
+          {
+            React.Children.map(that.props.children, (element, index) => {
+              return (
+                <li
+                  href='javascript:;'
+                  onClick={() => { that.setState({ currentIndex: index }); that.handleScroll(index) }}
+                  className={that.check_title_index(index)}
+                >
+                  {element.props.name}
+                </li>
+              )
+            })
+          }
+        </ul>
+        {/*tab内容*/}
+        <div className="tabContent">
+          {
+            React.Children.map(that.props.children, (element, index) => {
+              return (
+                <div className='show'>
+                  {element}
                 </div>
-            </div>
-        )
-    }
+              )
+            })
+          }
+        </div>
+      </div>
+    )
+  }
 }
 
 class TabComponent extends Component {
-    render() {
-        return (
-        
-          <TabController>
-              <div name='公司简介'>
-                <CompanyProfile/>
-              </div>
-              <div name='企业荣誉'>
-                <CompanyHonor/>
-              </div>
-              <div name='精英团队'>
-                  <Team/>
-              </div>
-              <div name='合作伙伴'>
-                  <Bank/>
-              </div>
-          </TabController>
-        )
-    }
+  render() {
+    return (
+
+      <TabController>
+        <div name='公司简介'>
+          <CompanyProfile />
+        </div>
+        <div name='企业荣誉'>
+          <CompanyHonor />
+        </div>
+        <div name='精英团队'>
+          <Team />
+        </div>
+        <div name='合作伙伴'>
+          <Bank />
+        </div>
+      </TabController>
+    )
+  }
 }
 
 class CompanyProfile extends Component {
@@ -127,7 +127,7 @@ class CompanyProfile extends Component {
         <p className='njs'>（信而富——美国纽交所上市公司）</p>
         <p>信而富(NYSE:XRF)2010年涉足网络借贷信息中介服务，结合在中国17年的风险管理实践经验，为借贷两端的用户提供风险评估、信息交互和借贷撮合等服务。业务范围覆盖全国20多个省及直辖市。基于平台促成的借款交易笔数，信而富是中国最大的网络借贷信息中介平台之一。2017年4月28日，信而富在美国纽约证券交易所挂牌上市，成为2017年首家登陆纽交所的中国企业。</p>
         <video poster='https://financeapp-static-uat.crfchina.com/webp2p_static/invests/public/image/tab/new1.png'>
-          <source src='https://financeapp-static-uat.crfchina.com/webp2p_static/invests/public/video/e.webm'/>
+          <source src='https://financeapp-static-uat.crfchina.com/webp2p_static/invests/public/video/e.webm' />
         </video>
         <p className='market_cheer'>（上市精彩瞬间）</p>
       </div>
@@ -135,7 +135,7 @@ class CompanyProfile extends Component {
   }
 }
 class CompanyHonor extends Component {
-  componentDidMount(){
+  componentDidMount() {
     honorHeight = this.refs.honor.clientHeight
     console.log(honorHeight);
   }
@@ -206,7 +206,7 @@ class CompanyHonor extends Component {
   }
 }
 class Team extends Component {
-  componentDidMount(){
+  componentDidMount() {
     teamHeight = this.refs.team.clientHeight
     console.log(teamHeight)
   }
@@ -226,7 +226,7 @@ class Team extends Component {
           <div className='partner1'>
             <div className='person_introl'>
               <span className='name'>Phillip Riese</span>
-              <span className='pic'></span>            
+              <span className='pic'></span>
             </div>
             <p>全球首家网络信贷平台、英国Zopa董事会董事</p>
             <p>曾任美国运通(American Express)信用卡服务业务总裁</p>
@@ -234,7 +234,7 @@ class Team extends Component {
           </div>
           <div className='partner2'>
             <div className='person_introl'>
-              <span className='pic'></span>            
+              <span className='pic'></span>
               <span className='name'>Nigel Morris</span>
             </div>
             <p>美国首家网贷平台Prosper公司董事</p>
@@ -245,7 +245,7 @@ class Team extends Component {
           <div className='partner3'>
             <div className='person_introl'>
               <span className='name'>Frank Rotman</span>
-              <span className='pic'></span>            
+              <span className='pic'></span>
             </div>
             <p>美国QED Investors创始人之一</p>
             <p>曾任美国Capital One分析师</p>
@@ -253,7 +253,7 @@ class Team extends Component {
           </div>
           <div className='partner4'>
             <div className='person_introl'>
-              <span className='pic'></span>            
+              <span className='pic'></span>
               <span className='name'>Douglas L. Brown</span>
             </div>
             <p>DLB Capital创始人、董事会主席及首席执行官</p>
@@ -264,7 +264,7 @@ class Team extends Component {
           <div className='partner5'>
             <div className='person_introl'>
               <span className='name'>张化桥</span>
-              <span className='pic'></span>            
+              <span className='pic'></span>
             </div>
             <p>曾就职于中国人民银行、深圳控股公司、瑞银集团</p>
             <p>现为港交所上市公司中国支付通集团董事长</p>

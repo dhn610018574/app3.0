@@ -1,4 +1,4 @@
-import React ,{Component} from 'react'
+import React, { Component } from 'react'
 import { Link } from 'react-router'
 import {
   Header,
@@ -12,13 +12,13 @@ export default class Find extends Component {
     document.body.scrollTop = 0
   }
   render() {
-    return(
+    return (
       <div>
-        <Header/>
-        <FindBanner/>
-        <FinanceNews/>
-        <NewList/>
-        <FindBar/>
+        <Header />
+        <FindBanner />
+        <FinanceNews />
+        <NewList />
+        <FindBar />
       </div>
     )
   }

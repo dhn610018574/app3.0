@@ -1,6 +1,6 @@
-import React ,{Component} from 'react'
-import { Link ,browserHistory} from 'react-router'
-import {CommonHeader} from '../../components'
+import React, { Component } from 'react'
+import { Link, browserHistory } from 'react-router'
+import { CommonHeader } from '../../components'
 import './index.scss'
 let MFHeight = 0
 let WCSHeight = 0
@@ -12,7 +12,7 @@ export default class RiskManagement extends Component {
     document.body.scrollTop = 0
   }
   render() {
-    return(
+    return (
       <div>
         <CommonHeader title='风险控制' url='home'></CommonHeader>
         <TabComponent></TabComponent>
@@ -21,96 +21,96 @@ export default class RiskManagement extends Component {
   }
 }
 class TabController extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            currentIndex : 0
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      currentIndex: 0
     }
+  }
 
-    check_title_index(index) {
-        return index === this.state.currentIndex ? 'active':'' 
-    }
+  check_title_index(index) {
+    return index === this.state.currentIndex ? 'active' : ''
+  }
 
-    handleScroll(index) {
-      let top = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
-      switch(index){
-        case 0:
+  handleScroll(index) {
+    let top = document.body.scrollTop || document.documentElement.scrollTop || window.pageYOffset;
+    switch (index) {
+      case 0:
         top = 0
         console.log(top)
         break;
-        case 1:
-        top = MFHeight+8
+      case 1:
+        top = MFHeight + 8
         console.log(top)
         break;
-        case 2:
-        top = MFHeight + WCSHeight+15
+      case 2:
+        top = MFHeight + WCSHeight + 15
         console.log(top)
         break;
-        case 3:
-        top = MFHeight + WCSHeight + BDMHeight+22
+      case 3:
+        top = MFHeight + WCSHeight + BDMHeight + 22
         console.log(top)
         break;
-      }
-      scrollTo({'behavior': 'smooth',top:top})
     }
-    render() {
-        const that = this;
-        return (
-            <div>
-                {/*动态生成tab*/}
-                <ul className='aboutTab'>
-                    {
-                        React.Children.map(that.props.children,(element,index)=>{
-                            return (
-                                <li 
-                                href='javascript:;'
-                                onClick={()=>{that.setState({currentIndex:index});that.handleScroll(index)}}
-                                className={that.check_title_index(index)}
-                                >
-                                {element.props.name}
-                                </li>
-                            )
-                        })
-                    }
-                </ul>
-                {/*tab内容*/}
-                <div className="tabContent">
-                {
-                    React.Children.map(that.props.children,(element,index)=>{
-                        return (
-                            <div className='show'>
-                            {element}
-                            </div>
-                        )
-                    })
-                }                
+    scrollTo({ 'behavior': 'smooth', top: top })
+  }
+  render() {
+    const that = this;
+    return (
+      <div>
+        {/*动态生成tab*/}
+        <ul className='aboutTab'>
+          {
+            React.Children.map(that.props.children, (element, index) => {
+              return (
+                <li
+                  href='javascript:;'
+                  onClick={() => { that.setState({ currentIndex: index }); that.handleScroll(index) }}
+                  className={that.check_title_index(index)}
+                >
+                  {element.props.name}
+                </li>
+              )
+            })
+          }
+        </ul>
+        {/*tab内容*/}
+        <div className="tabContent">
+          {
+            React.Children.map(that.props.children, (element, index) => {
+              return (
+                <div className='show'>
+                  {element}
                 </div>
-            </div>
-        )
-    }
+              )
+            })
+          }
+        </div>
+      </div>
+    )
+  }
 }
 
 class TabComponent extends Component {
-    render() {
-        return (
-        
-          <TabController>
-              <div name='小额分散'>
-                <Microfinance/>
-              </div>
-              <div name='风控体系'>
-                <WindControlSystem/>
-              </div>
-              <div name='银行存管'>
-                  <BankDepositManagement/>
-              </div>
-              <div name='财务审计'>
-                  <FinancialAudit/>
-              </div>
-          </TabController>
-        )
-    }
+  render() {
+    return (
+
+      <TabController>
+        <div name='小额分散'>
+          <Microfinance />
+        </div>
+        <div name='风控体系'>
+          <WindControlSystem />
+        </div>
+        <div name='银行存管'>
+          <BankDepositManagement />
+        </div>
+        <div name='财务审计'>
+          <FinancialAudit />
+        </div>
+      </TabController>
+    )
+  }
 }
 // 小额分散
 class Microfinance extends Component {
@@ -131,7 +131,7 @@ class Microfinance extends Component {
 }
 // 风控体系
 class WindControlSystem extends Component {
-  componentDidMount(){
+  componentDidMount() {
     WCSHeight = this.refs.WCS.clientHeight
     console.log(WCSHeight);
   }
@@ -168,7 +168,7 @@ class WindControlSystem extends Component {
 }
 // 银行存管
 class BankDepositManagement extends Component {
-  componentDidMount(){
+  componentDidMount() {
     BDMHeight = this.refs.BDM.clientHeight
     console.log(BDMHeight)
   }
