@@ -11,6 +11,9 @@ import {
   HomeBar
 } from '../components'
 export default class Home extends Component {
+  componentDidMount(){
+    document.body.scrollTop = 0
+  }
   render() {
     return(
       <div>

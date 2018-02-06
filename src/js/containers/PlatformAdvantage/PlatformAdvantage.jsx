@@ -6,6 +6,9 @@ let strengthHeight = 0
 let complianceHeight = 0
 
 export default class PlatformAdvantage extends Component {
+  componentDidMount(){
+    document.body.scrollTop = 0
+  }
   render() {
     return(
       <div>

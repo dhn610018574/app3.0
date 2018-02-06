@@ -8,6 +8,9 @@ import {
   ProductDescription
 } from '../components'
 export default class InvestDetail extends Component {
+  componentDidMount(){
+    document.body.scrollTop = 0
+  }
   render() {
     return(
       <div>

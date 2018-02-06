@@ -8,6 +8,9 @@ let BDMHeight = 0
 let FAHeight = 0
 
 export default class RiskManagement extends Component {
+  componentDidMount(){
+    document.body.scrollTop = 0
+  }
   render() {
     return(
       <div>

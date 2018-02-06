@@ -2,6 +2,9 @@ import React, {Component} from 'react'
 import { Link } from 'react-router'
 import './index.scss'
 export default class NewProduct extends Component {
+  constructor(props,context){
+    super(props)
+  }
   render(){
     return(
       <div className='newProduct'>

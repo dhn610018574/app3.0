@@ -41,7 +41,6 @@ export default class InvestDetail extends Component {
 
       let result = await fetchPromise
       let recordResult = await recordPromise
-      console.log(recordResult)
       if(result && !result.response) {
         this.setState({
           isShow:false
@@ -53,7 +52,6 @@ export default class InvestDetail extends Component {
           count:recordResult.data.count
         })
       }
-      console.log(this.state)
     }catch(error){
       this.setState({
         isShow:false

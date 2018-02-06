@@ -7,6 +7,9 @@ import {
   InvestBar
 } from '../components'
 export default class Find extends Component {
+  componentDidMount(){
+    document.body.scrollTop = 0
+  }
   render() {
     return(
       <div>

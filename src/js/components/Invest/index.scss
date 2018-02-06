@@ -185,7 +185,7 @@ body{
   margin-bottom: .16rem;
   margin-top: .2rem;
   padding-top: 3.4rem;
-  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   h4 {
     font-size: .3rem;
     color: #333;
@@ -197,7 +197,6 @@ body{
     li {
       height: 100%;
       width: 100%;
-      border-top: 1px solid rgba(0, 0, 0, 0.10);
       position: relative;
       a {
         display: block;

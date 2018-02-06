@@ -8,6 +8,9 @@ let teamHeight = 0
 let bankHeight = 0
 
 export default class AboutUs extends Component {
+  componentDidMount(){
+    document.body.scrollTop = 0
+  }
   render() {
     return(
       <div>
