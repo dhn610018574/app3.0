@@ -113,7 +113,6 @@ const FetchInterface = {
     } else {
       let msg = err&&err.body;
       let status = err&&err.response&&err.response.status;
-      let code = err && err.responseText.code
 
       if(!fn){
         fn=()=>location.reload();
