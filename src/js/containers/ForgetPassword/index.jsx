@@ -1,15 +1,15 @@
 import React, { Component } from 'react'
 import { Router, Route, IndexRoute, Link } from 'react-router'
 import {CommonHeader} from '../../components'
-import './index.scss'
-export default class Register extends Component {
+import '../Register/index.scss'
+export default class ForgetPassword extends Component {
   componentDidMount(){
     document.body.scrollTop = 0
   }
   render() {
     return (
       <div className="register">
-        <CommonHeader title='快速注册' url='login'></CommonHeader>
+        <CommonHeader title='忘记密码' url='login'></CommonHeader>
         <div className='registerInfo'>
           <input type="number" placeholder='18302185910' className='tel'/>
           <input type="number" placeholder='请输入验证码' className='smsCode'/>

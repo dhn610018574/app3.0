@@ -13,4 +13,5 @@ export {default as ProductFeatures} from './ProductFeatures/index.jsx'
 export {default as CommonProblem} from './CommonProblem/index.jsx'
 export {default as Login} from './Login/index.jsx'
 export {default as Register} from './Register/index.jsx'
+export {default as ForgetPassword} from './ForgetPassword/index.jsx'
 

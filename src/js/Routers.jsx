@@ -15,7 +15,8 @@ import {
   ProductFeatures,
   CommonProblem,
   Login,
-  Register
+  Register,
+  ForgetPassword
 }  from './containers'
 
 export default (
@@ -23,6 +24,7 @@ export default (
     <IndexRoute component={Home}></IndexRoute>
     <Route path='login' component={Login}></Route>
     <Route path='register' component={Register}></Route>
+    <Route path='forgetPassword' component={ForgetPassword}></Route>
     <Route path='home' component={Home}></Route>
     <Route path='invest' component={Invest}></Route>
     <Route path='investDetail' component={InvestDetail}></Route>

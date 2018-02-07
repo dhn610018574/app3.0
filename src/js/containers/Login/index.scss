@@ -28,6 +28,7 @@
 .userInfo{
   background-color: #fff;
   padding: .4rem .4rem .4rem;
+  position: relative;
   input{
     display: block;
     height: 1.12rem;
@@ -44,12 +45,24 @@
     text-indent: .84rem;
   }
   .name{
-    background: url('../../../images/home_name.png') no-repeat left center ,url('../../../images/ic_clear.png') no-repeat right;
+    background: url('../../../images/home_name.png') no-repeat left center;
     background-size: .44rem .44rem;
+    padding-right: .4rem;
   }
   .psw{
     background: url('../../../images/home_psw.png') no-repeat left center;
     background-size: .44rem .44rem;
+  }
+  .hiddenBtn{
+    position: absolute;
+    display: block;
+    width: .44rem;
+    height: .44rem;
+    // border-radius: 50%;
+    top: .72rem;
+    right: .4rem;
+    background: url('../../../images/ic_clear.png') no-repeat;
+    background-size: 100%;
   }
   .loginBtn{
     height: .92rem;
