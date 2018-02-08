@@ -17,35 +17,18 @@ export default class Login extends Component {
       value:event.target.value
     })
   }
+  handlePswChange(event){
+    this.setState({
+      pswVal:event.target.value
+    })
+  }
   clearInputVal(){
     this.setState({
       value:''
     })
   }
-  onfocus(){
-    this.setState({
-      placeValue:"",
-    })
-  }
-  onPswFocus(){
-    this.setState({
-      pswVal:"",
-    })
-  }
-  onblur(event){
-    if(event.target.value ===""){
-      this.setState({
-        value:"请输入手机号"
-      })
-    }
-  }
-  onPswBlur(event){
-    if(event.target.value === ''){
-      this.setState({
-        pswVal:"请输入密码"
-      })
-    }
-  }
+
+
   render() {
     let value = this.state.value
     let pswValue = this.state.pswVal
@@ -59,16 +42,13 @@ export default class Login extends Component {
           <input type="tel" 
           className='name' 
           ref="telVal" 
-          onChange={this.handleChange} 
+          onChange={this.handleChange.bind(this)} 
           value={value} 
-          onFocus={this.onfocus.bind(this)}
-          onBlur={this.onblur.bind(this)}
           />
           <input type="text" 
           className='psw' 
           value={pswValue} 
-          onFocus={this.onPswFocus.bind(this)}
-          onBlur={this.onPswBlur.bind(this)}
+          onChange={this.handlePswChange.bind(this)}
           />
           <div className="hiddenBtn" onClick={this.clearInputVal.bind(this)}></div>
           <button className='loginBtn'>登录</button>
