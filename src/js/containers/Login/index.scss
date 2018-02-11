@@ -58,7 +58,6 @@
     display: block;
     width: .44rem;
     height: .44rem;
-    // border-radius: 50%;
     top: .72rem;
     right: .4rem;
     background: url('../../../images/ic_clear.png') no-repeat;
@@ -71,10 +70,10 @@
     color: #fff;
     font-size: .32rem;
     border: 0;
-    -webkit-appearance: none;
     background-color: #FB4D3A;
     border-radius: .1rem;
-    margin-bottom: .6rem;
+    text-align: center;
+    margin: .7rem auto .6rem;
   }
   .userSet{
     display: flex;
