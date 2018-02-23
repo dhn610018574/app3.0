@@ -16,6 +16,7 @@ export default class ProductDetails extends Component {
     let width = float+"%"
     return(
       <div className='productDetails'>
+      
         <div className='timeAndTips'>
           <h6 className='closeTime'>截止日期：{Common.formatDate(this.props.detailData.closeTime, "-").YMD}</h6>
           <div className='tips'>
@@ -50,7 +51,7 @@ export default class ProductDetails extends Component {
         <div className='progress'>
           <p className='speed'>
             <span>进度 {float}%</span>
-            <span>剩余可投{reset / 10000}万元</span>
+            <span>剩余可投{reset}万元</span>
           </p>
           <div className='progressBar'>
             <div className='finished' style={{ width: width }}></div>

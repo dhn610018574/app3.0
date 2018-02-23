@@ -6,6 +6,7 @@ import './styles/_base.scss'
 import './styles/home.scss'
 global.CRFFetch = require('./js/utils/ajax/index')
 global.CONFIGS = require('./js/config')
+global.LocalImg = require('./js/images')
 global.Common = require('./js/utils/common/index')
 require('es6-promise/auto');
 require('whatwg-fetch');
